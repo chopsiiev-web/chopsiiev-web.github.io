@@ -357,3 +357,8 @@ footer { font: 400 .8rem/1.5 var(--mono); color: var(--muted); }
 .loop.zoom { cursor: zoom-out; }
 .loop.zoom svg { width: var(--w); max-width: none; }
 @media (max-width: 900px) { .loop svg { width: var(--w); max-width: none; } }
+
+.flowcard { gap: .6rem; }
+.flowcard h3 { font-size: clamp(1.25rem, 2.2vw, 1.7rem); max-width: 34ch; }
+.flowcard .flow { margin-top: .4rem; }
+.case2 .open { grid-row: 2 / span 2; }
