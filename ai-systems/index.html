@@ -62,7 +62,7 @@
     <span class="big" aria-hidden="true">04</span>
     <span class="eyebrow" data-n="04">How I build</span>
     <h2 class="h2" id="how">Built in a week. Checked on every run. Smarter after every mistake.</h2>
-    <div class="map loop" data-loop="build">
+    <div class="map loop" data-loop="build" style="--w:1100px">
 <svg viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How a system is built and kept alive: find the repeat, write the rules, build, run, check, a person decides, learn. Two return arrows: a failed check goes back to the build, and every caught mistake becomes a new check." font-family="JetBrains Mono, Menlo, monospace">
 <defs><marker id="l-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#111214"/></marker><marker id="l-sig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff4d1c"/></marker></defs>
 <path d="M641.5 94.2 L647.9 94.8 L654.3 95.4 L660.7 96.1 L667.1 96.8 L673.4 97.6 L679.7 98.4 L686.0 99.3 L692.2 100.2 L698.4 101.1 L704.6 102.1 L710.8 103.1 L716.9 104.2 L722.9 105.3 L729.0 106.4 L735.0 107.6 L740.9 108.8 L746.8 110.1 L752.7 111.4 L758.5 112.7 L764.3 114.1 L770.0 115.5 L775.7 116.9 L781.3 118.4 L786.9 119.9 L792.4 121.4 L797.9 123.0 L803.3 124.6" fill="none" stroke="#111214" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#l-ink)" class="d-move"/>
@@ -514,7 +514,7 @@
     next.textContent = 'Telegram opened with the brief in the message box. Press send there.'; });
   document.getElementById('f-copy').addEventListener('click', async (e) => { const b = build(); if (!b) return;
     try { await navigator.clipboard.writeText(b.text); e.target.textContent = 'Copied'; } catch (x) { e.target.textContent = 'Select the text above and copy it'; } });
-  document.querySelectorAll('.board').forEach(b => b.addEventListener('click', () => { b.classList.toggle('zoom'); if (!b.classList.contains('zoom')) b.scrollLeft = 0; }));
+  document.querySelectorAll('.board, .loop').forEach(b => b.addEventListener('click', () => { b.classList.toggle('zoom'); if (!b.classList.contains('zoom')) b.scrollLeft = 0; }));
 </script>
 </body>
 </html>

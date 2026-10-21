@@ -352,3 +352,8 @@ footer { font: 400 .8rem/1.5 var(--mono); color: var(--muted); }
 .seg label { white-space: nowrap; text-transform: none; letter-spacing: 0; flex: 0 0 auto; }
 .who { grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr)); }
 .pains { grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr)); }
+
+.loop { cursor: zoom-in; }
+.loop.zoom { cursor: zoom-out; }
+.loop.zoom svg { width: var(--w); max-width: none; }
+@media (max-width: 900px) { .loop svg { width: var(--w); max-width: none; } }
