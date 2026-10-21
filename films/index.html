@@ -432,7 +432,7 @@
 ');
     try { await navigator.clipboard.writeText(text); } catch (x) {}
     location.href = 'mailto:chopsiiev@gmail.com?subject=' + encodeURIComponent('Film brief: ' + d.product) + '&body=' + encodeURIComponent(text);
-    next.textContent = 'Your email app opened with the brief inside. The brief is also copied, in case you prefer Telegram.'; });
+    next.innerHTML = 'Your email app opened with the brief inside. The brief is also copied, in case you prefer Telegram. <a href="../thanks/">What happens next</a>.'; });
 
   // sticky button: shown while neither the hero nor the order block is on screen
   const sticky = document.getElementById('sticky'); const seen = new Map();
