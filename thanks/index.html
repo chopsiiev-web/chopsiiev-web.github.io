@@ -30,10 +30,41 @@
       <div class="stage gate" role="listitem"><span class="num">2</span><span class="fn">Send what is missing</span><span class="what">If you paid before sending the brief: the link to your product and the main thing to say, by email or on Telegram.</span></div>
       <div class="stage human" role="listitem"><span class="num">3</span><span class="fn">The clock starts</span><span class="what">Product film: two days from the moment the payment and the link are both in. Explainer: dates agreed on the call.</span></div>
     </div>
+    <form class="form" id="brief" novalidate>
+      <div class="field"><span class="eyebrow">Paid already, or want to add something? Send it here</span></div>
+      <div class="field"><label for="f-email">Your email</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required placeholder="you@company.com"></div>
+      <div class="field"><label for="f-product">Link to the product</label><input id="f-product" name="product" type="url" inputmode="url" autocomplete="url" spellcheck="false" required placeholder="https://"></div>
+      <div class="field"><label for="f-message">The main thing to say, references, dates <em>optional</em></label><textarea id="f-message" name="message" rows="3" autocomplete="off" placeholder="a few lines, or leave it to me"></textarea></div>
+      <p class="err" id="f-err" aria-live="polite"></p>
+      <div class="actions"><button class="btn" type="submit">Send</button><span class="eyebrow">arrives in my Telegram at once</span></div>
+      <p class="next" id="f-next" aria-live="polite"></p>
+    </form>
     <p class="lead">Questions in the meantime: write any time.</p>
     <p class="row contact"><a href="mailto:chopsiiev@gmail.com">chopsiiev@gmail.com</a><a href="https://t.me/Hadzhymurad">Telegram</a><a href="https://www.linkedin.com/in/hadzhymurad/">LinkedIn</a><a href="https://x.com/chopsiiev60091">X</a></p>
   </section>
   <footer>Lisbon. Remote across Europe.</footer>
 </main>
+<script>
+  const form = document.getElementById('brief'), err = document.getElementById('f-err'), next = document.getElementById('f-next');
+  const TG = { token: '8895956091:AAFKd_nAwF_FHgLZr74kzUX6tV1T1p649hM', chat: '56646886' }, SRC = 'Thank-you page, after payment';
+  form.addEventListener('submit', async e => { e.preventDefault();
+    const d = Object.fromEntries(new FormData(form).entries());
+    const bad = [...form.querySelectorAll('[required]')].find(i => !i.checkValidity());
+    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : 'Add the link to the product.'; bad.focus(); return; }
+    err.textContent = '';
+    const text = ['Email: ' + d.email, 'Product: ' + d.product, 'Notes: ' + (d.message || '-')].join('\n');
+    const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Brief after payment\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text }) });
+      if (!r.ok) throw new Error(String(r.status));
+      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; if (!location.pathname.includes('/thanks')) location.href = '../thanks/'; return;
+    } catch (x) {
+      btn.disabled = false; btn.textContent = 'Send the brief';
+      try { await navigator.clipboard.writeText(text); } catch (y) {}
+      location.href = 'mailto:chopsiiev@gmail.com?subject=' + encodeURIComponent('Brief: ' + d.product) + '&body=' + encodeURIComponent(text);
+      next.innerHTML = 'Sending from the page failed, so your email app opened with the brief inside. The brief is also copied, in case you prefer Telegram. <a href="../thanks/">What happens next</a>.'; }
+  });
+  // end
+</script>
 </body>
 </html>
