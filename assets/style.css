@@ -362,3 +362,6 @@ footer { font: 400 .8rem/1.5 var(--mono); color: var(--muted); }
 .flowcard h3 { font-size: clamp(1.25rem, 2.2vw, 1.7rem); max-width: 34ch; }
 .flowcard .flow { margin-top: .4rem; }
 .case2 .open { grid-row: 2 / span 2; }
+
+.path2 .btn.pay { justify-self: start; text-decoration: none; display: inline-block; margin-top: .4rem; }
+.path2 .btn.pay + .eyebrow { margin-top: -.2rem; }
