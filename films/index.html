@@ -441,15 +441,6 @@
       location.href = 'mailto:chopsiiev@gmail.com?subject=' + encodeURIComponent('Film brief: ' + d.product) + '&body=' + encodeURIComponent(text);
       next.innerHTML = 'Sending from the page failed, so your email app opened with the brief inside. The brief is also copied, in case you prefer Telegram. <a href="../thanks/">What happens next</a>.'; }
   });
-      if (!r.ok) throw new Error(String(r.status));
-      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; location.href = '../thanks/'; return;
-    } catch (x) {
-      btn.disabled = false; btn.textContent = 'Send the brief';
-      try { await navigator.clipboard.writeText(text); } catch (y) {}
-      location.href = 'mailto:chopsiiev@gmail.com?subject=' + encodeURIComponent('Film brief: ' + d.product) + '&body=' + encodeURIComponent(text);
-      next.innerHTML = 'Sending from the page failed, so your email app opened with the brief inside. The brief is also copied, in case you prefer Telegram. <a href="../thanks/">What happens next</a>.'; }
-  });
-
   // sticky button: shown while neither the hero nor the order block is on screen
   const sticky = document.getElementById('sticky'); const seen = new Map();
   const io = new IntersectionObserver(es => { es.forEach(x => seen.set(x.target, x.isIntersecting)); sticky.classList.toggle('show', ![...seen.values()].some(Boolean)); }, { threshold: 0.05 });

@@ -503,14 +503,6 @@
       location.href = 'mailto:chopsiiev@gmail.com?subject=' + encodeURIComponent('Automation brief: ' + (d.company || d.email)) + '&body=' + encodeURIComponent(text);
       next.innerHTML = 'Sending from the page failed, so your email app opened with the brief inside. The brief is also copied, in case you prefer Telegram. <a href="../thanks/">What happens next</a>.'; }
   });
-      if (!r.ok) throw new Error(String(r.status));
-      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; location.href = '../thanks/'; return;
-    } catch (x) {
-      btn.disabled = false; btn.textContent = 'Send the brief';
-      try { await navigator.clipboard.writeText(text); } catch (y) {}
-      location.href = 'mailto:chopsiiev@gmail.com?subject=' + encodeURIComponent('Automation brief: ' + (d.company || d.email)) + '&body=' + encodeURIComponent(text);
-      next.innerHTML = 'Sending from the page failed, so your email app opened with the brief inside. The brief is also copied, in case you prefer Telegram. <a href="../thanks/">What happens next</a>.'; }
-  });
   document.querySelectorAll('.board, .loop').forEach(b => b.addEventListener('click', () => { b.classList.toggle('zoom'); if (!b.classList.contains('zoom')) b.scrollLeft = 0; }));
 </script>
 </body>
