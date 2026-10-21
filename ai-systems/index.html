@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f2ec">
+<title>AI systems · Murad Chopsiiev</title>
+<meta name="description" content="Systems that take a team’s repeat work: research, monitoring, reports, publishing, video. Built with Claude Code, checked at every step, with a person at every gate. Seven cases.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main class="page" id="main">
+  <header class="top">
+    <span>Murad Chopsiiev</span>
+    <span class="loc">AI systems · Lisbon · remote</span>
+  </header>
+
+  <section class="hero" aria-labelledby="promise">
+    <h1 id="promise">You hired people to think. Repeat work took their week.</h1>
+    <p>I build the systems that take the repeat work: research, monitoring, reports, publishing, video, the handoffs between tools. Built with Claude Code in weeks, with a check at every step and a person at every gate.</p>
+    <ul class="worth">
+      <li><b data-k="You earn">Work that ships on time</b><span>Launches, reports and content go out when they are due, not when someone finds the hours.</span></li>
+      <li><b data-k="You save">The hours of the week</b><span>Reading sources, checking numbers, moving data between tools. The system does the rounds; people make the decisions.</span></li>
+      <li><b data-k="You keep">Control</b><span>Every output is checked before a person sees it. Nothing is sent, paid or signed without a yes.</span></li>
+    </ul>
+    <p class="tools"><b>Built with</b><span>Claude Code</span><span>HyperFrames</span><span>Playwright</span><span>ffmpeg</span><span>launchd</span><span>Notion</span><span>GitHub</span><span>Telegram</span></p>
+  </section>
+
+  <section class="step" aria-labelledby="who" data-n="02">
+    <span class="big" aria-hidden="true">02</span>
+    <span class="eyebrow" data-n="02">For whom</span>
+    <h2 class="h2" id="who">For teams where one person is the whole department.</h2>
+    <ul class="who">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-3 4 3 4H5"/></svg><b>Founders with a small team</b><span>You need the output of ten people and can’t hire eight.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4l10 4V6L3 10z"/><path d="M16 9a3 3 0 0 1 0 6"/><path d="M6 14l1 6h3l-1-6"/></svg><b>Marketing leads</b><span>Half the week goes to monitoring, posting and spreadsheets.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg><b>Operations leads</b><span>Orders, tickets, invoices, onboarding: every step by hand, every error found late.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8L3 4z"/></svg><b>Sales teams</b><span>Leads arrive faster than anyone can research and qualify them.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v11H9l-5 4V4z"/><path d="M8 9h8M8 12h5"/></svg><b>Support and success</b><span>The same twenty questions, answered by hand, every day.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><b>Agencies and studios</b><span>Every client gets the same process. It lives in people’s heads.</span></li>
+    </ul>
+  </section>
+
+  <section class="step" aria-labelledby="problem" data-n="03">
+    <span class="big" aria-hidden="true">03</span>
+    <span class="eyebrow" data-n="03">The problem</span>
+    <h2 class="h2" id="problem">Repeat work does not look expensive. It looks like Tuesday.</h2>
+    <ul class="pains">
+      <li><b>The one person who knows the process gets sick.</b><span>Everything waits. The steps were never written down, so nobody can pick them up.</span></li>
+      <li><b>The report is late again.</b><span>The numbers lived in four tools and one inbox. Someone spent Friday copying them.</span></li>
+      <li><b>The same mistake comes back every month.</b><span>The fix was a message in a chat, not a rule. Nobody remembers it in week three.</span></li>
+      <li><b>The AI tools are paid for and idle.</b><span>They answer questions. Nobody turned them into something that does the job without being asked.</span></li>
+      <li><b>The default answer is a hire.</b><span>Then the new person does the same repeat work, and the cost is permanent.</span></li>
+      <li><b>Growth stalls at the size of the team.</b><span>Every new channel, market or product needs hands you do not have.</span></li>
+    </ul>
+  </section>
+
+  <section class="step" aria-labelledby="how" data-n="04">
+    <span class="big" aria-hidden="true">04</span>
+    <span class="eyebrow" data-n="04">How I build</span>
+    <h2 class="h2" id="how">Built in a week. Checked on every run. Smarter after every mistake.</h2>
+    <div class="map loop" data-loop="build">
+<svg viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How a system is built and kept alive: find the repeat, write the rules, build, run, check, a person decides, learn. Two return arrows: a failed check goes back to the build, and every caught mistake becomes a new check." font-family="JetBrains Mono, Menlo, monospace">
+<defs><marker id="l-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#111214"/></marker><marker id="l-sig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff4d1c"/></marker></defs>
+<path d="M641.5 94.2 L647.9 94.8 L654.3 95.4 L660.7 96.1 L667.1 96.8 L673.4 97.6 L679.7 98.4 L686.0 99.3 L692.2 100.2 L698.4 101.1 L704.6 102.1 L710.8 103.1 L716.9 104.2 L722.9 105.3 L729.0 106.4 L735.0 107.6 L740.9 108.8 L746.8 110.1 L752.7 111.4 L758.5 112.7 L764.3 114.1 L770.0 115.5 L775.7 116.9 L781.3 118.4 L786.9 119.9 L792.4 121.4 L797.9 123.0 L803.3 124.6" fill="none" stroke="#111214" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#l-ink)" class="d-move"/>
+<path d="M957.1 207.9 L959.6 210.6 L961.9 213.2 L964.2 215.9 L966.4 218.6 L968.5 221.3 L970.5 224.0 L972.3 226.7 L974.1 229.5 L975.8 232.2 L977.5 235.0 L979.0 237.7 L980.4 240.5 L981.7 243.3 L982.9 246.1 L984.1 248.9 L985.1 251.7 L986.0 254.5 L986.9 257.3 L987.6 260.1 L988.2 263.0 L988.8 265.8 L989.2 268.6 L989.6 271.5 L989.8 274.3 L990.0 277.2" fill="none" stroke="#111214" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#l-ink)" class="d-move"/>
+<path d="M940.5 367.5 L937.5 370.0 L934.3 372.5 L931.1 375.0 L927.7 377.5 L924.3 379.9 L920.8 382.3 L917.2 384.7 L913.5 387.0 L909.8 389.4 L906.0 391.7 L902.1 394.0 L898.1 396.2 L894.0 398.5 L889.9 400.7 L885.6 402.9 L881.4 405.0 L877.0 407.1 L872.5 409.2 L868.0 411.3 L863.4 413.3 L858.8 415.4 L854.1 417.3 L849.3 419.3 L844.4 421.2 L839.5 423.1 L834.5 424.9" fill="none" stroke="#111214" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#l-ink)" class="d-move"/>
+<path d="M647.9 465.2 L641.5 465.8 L635.0 466.4 L628.6 466.9 L622.1 467.4 L615.6 467.9 L609.1 468.3 L602.5 468.6 L596.0 469.0 L589.4 469.2 L582.9 469.5 L576.3 469.7 L569.7 469.8 L563.2 469.9 L556.6 470.0 L550.0 470.0 L543.4 470.0 L536.8 469.9 L530.3 469.8 L523.7 469.7 L517.1 469.5 L510.6 469.2 L504.0 469.0 L497.5 468.6 L490.9 468.3 L484.4 467.9 L477.9 467.4 L471.4 466.9 L465.0 466.4 L458.5 465.8 L452.1 465.2" fill="none" stroke="#111214" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#l-ink)" class="d-move"/>
+<path d="M265.5 424.9 L260.5 423.1 L255.6 421.2 L250.7 419.3 L245.9 417.3 L241.2 415.4 L236.6 413.3 L232.0 411.3 L227.5 409.2 L223.0 407.1 L218.6 405.0 L214.4 402.9 L210.1 400.7 L206.0 398.5 L201.9 396.2 L197.9 394.0 L194.0 391.7 L190.2 389.4 L186.5 387.0 L182.8 384.7 L179.2 382.3 L175.7 379.9 L172.3 377.5 L168.9 375.0 L165.7 372.5 L162.5 370.0 L159.5 367.5" fill="none" stroke="#111214" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#l-ink)" class="d-move"/>
+<path d="M110.0 277.2 L110.2 274.3 L110.4 271.5 L110.8 268.6 L111.2 265.8 L111.8 263.0 L112.4 260.1 L113.1 257.3 L114.0 254.5 L114.9 251.7 L115.9 248.9 L117.1 246.1 L118.3 243.3 L119.6 240.5 L121.0 237.7 L122.5 235.0 L124.2 232.2 L125.9 229.5 L127.7 226.7 L129.5 224.0 L131.5 221.3 L133.6 218.6 L135.8 215.9 L138.1 213.2 L140.4 210.6 L142.9 207.9" fill="none" stroke="#111214" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#l-ink)" class="d-move"/>
+<path d="M296.7 124.6 L302.1 123.0 L307.6 121.4 L313.1 119.9 L318.7 118.4 L324.3 116.9 L330.0 115.5 L335.7 114.1 L341.5 112.7 L347.3 111.4 L353.2 110.1 L359.1 108.8 L365.0 107.6 L371.0 106.4 L377.1 105.3 L383.1 104.2 L389.2 103.1 L395.4 102.1 L401.6 101.1 L407.8 100.2 L414.0 99.3 L420.3 98.4 L426.6 97.6 L432.9 96.8 L439.3 96.1 L445.7 95.4 L452.1 94.8 L458.5 94.2" fill="none" stroke="#111214" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#l-ink)" class="d-move"/>
+<path d="M294.0 161.5 Q490 240 891.0 310.3" fill="none" stroke="#ff4d1c" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#l-sig)"/>
+<text x="541.2" y="230.0" font-size="11" font-weight="700" fill="#ff4d1c" text-anchor="middle" paint-order="stroke" stroke="#f4f2ec" stroke-width="5" stroke-linejoin="round">the fix becomes a check</text>
+<path d="M447.1 451.2 Q590 340 891.0 334.3" fill="none" stroke="#ff4d1c" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#l-sig)"/>
+<text x="629.5" y="372.4" font-size="11" font-weight="700" fill="#ff4d1c" text-anchor="middle" paint-order="stroke" stroke="#f4f2ec" stroke-width="5" stroke-linejoin="round">a fail goes back to the build</text>
+<text x="550" y="274" font-size="12.5" font-weight="700" fill="#6b6d74" text-anchor="middle" letter-spacing=".04em">EVERY RUN FEEDS THE NEXT</text>
+<rect x="466.0" y="52.0" width="176" height="84" fill="#111214"/><rect x="462.0" y="48.0" width="176" height="84" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<rect x="471.0" y="57.0" width="20" height="20" fill="#111214"/><text x="481.0" y="71.5" font-size="12" font-weight="800" fill="#f4f2ec" text-anchor="middle">1</text>
+<text x="498.0" y="72.0" font-size="13" font-weight="700" fill="#111214">Find the repeat</text>
+<text x="472.0" y="92.0" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">The job your team does the</text>
+<text x="472.0" y="104.5" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">same way every week.</text>
+<rect x="810.0" y="123.5" width="176" height="84" fill="#111214"/><rect x="806.0" y="119.5" width="176" height="84" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<rect x="815.0" y="128.5" width="20" height="20" fill="#111214"/><text x="825.0" y="143.0" font-size="12" font-weight="800" fill="#f4f2ec" text-anchor="middle">2</text>
+<text x="842.0" y="143.5" font-size="13" font-weight="700" fill="#111214">Write the rules</text>
+<text x="816.0" y="163.5" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">One page: what it does, what</text>
+<text x="816.0" y="176.0" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">it never does, what it costs.</text>
+<rect x="895.0" y="284.3" width="176" height="84" fill="#111214"/><rect x="891.0" y="280.3" width="176" height="84" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<rect x="900.0" y="289.3" width="20" height="20" fill="#111214"/><text x="910.0" y="303.8" font-size="12" font-weight="800" fill="#f4f2ec" text-anchor="middle">3</text>
+<text x="927.0" y="304.3" font-size="13" font-weight="700" fill="#111214">Build it</text>
+<text x="901.0" y="324.3" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">With Claude Code, in days: the</text>
+<text x="901.0" y="336.8" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">tools, the prompts, the</text>
+<text x="901.0" y="349.3" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">checks.</text>
+<rect x="656.9" y="413.2" width="176" height="84" fill="#111214"/><rect x="652.9" y="409.2" width="176" height="84" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<rect x="661.9" y="418.2" width="20" height="20" fill="#111214"/><text x="671.9" y="432.7" font-size="12" font-weight="800" fill="#f4f2ec" text-anchor="middle">4</text>
+<text x="688.9" y="433.2" font-size="13" font-weight="700" fill="#111214">Run it</text>
+<text x="662.9" y="453.2" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">On a timer or on one command.</text>
+<text x="662.9" y="465.7" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Every step saves a record.</text>
+<rect x="275.1" y="413.2" width="176" height="84" fill="#111214"/><rect x="271.1" y="409.2" width="176" height="84" fill="#ffffff" stroke="#ff4d1c" stroke-width="2"/>
+<rect x="280.1" y="418.2" width="20" height="20" fill="#ff4d1c"/><text x="290.1" y="432.7" font-size="12" font-weight="800" fill="#f4f2ec" text-anchor="middle">5</text>
+<text x="307.1" y="433.2" font-size="13" font-weight="700" fill="#111214">Check it</text>
+<text x="281.1" y="453.2" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Every rule is a check. A fail</text>
+<text x="281.1" y="465.7" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">stops the run, not the team.</text>
+<rect x="37.0" y="284.3" width="176" height="84" fill="#111214"/><rect x="33.0" y="280.3" width="176" height="84" fill="#111214" stroke="#111214" stroke-width="2"/>
+<rect x="42.0" y="289.3" width="20" height="20" fill="#f4f2ec"/><text x="52.0" y="303.8" font-size="12" font-weight="800" fill="#111214" text-anchor="middle">6</text>
+<text x="69.0" y="304.3" font-size="13" font-weight="700" fill="#ff4d1c">A person decides</text>
+<text x="43.0" y="324.3" font-size="10.5" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Post, pay, send, sign: always</text>
+<text x="43.0" y="336.8" font-size="10.5" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">a human yes.</text>
+<rect x="122.0" y="123.5" width="176" height="84" fill="#111214"/><rect x="118.0" y="119.5" width="176" height="84" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<rect x="127.0" y="128.5" width="20" height="20" fill="#111214"/><text x="137.0" y="143.0" font-size="12" font-weight="800" fill="#f4f2ec" text-anchor="middle">7</text>
+<text x="154.0" y="143.5" font-size="13" font-weight="700" fill="#111214">Learn</text>
+<text x="128.0" y="163.5" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Each caught mistake becomes a</text>
+<text x="128.0" y="176.0" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">new check. It cannot pass</text>
+<text x="128.0" y="188.5" font-size="10.5" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">twice.</text>
+</svg>
+</div>
+    <p class="lead">Every rule becomes a check. Every check leaves a record. Every caught mistake becomes a new check, so it cannot pass twice.</p>
+  </section>
+
+  <section class="step" aria-labelledby="cases" data-n="05">
+    <span class="big" aria-hidden="true">05</span>
+    <span class="eyebrow" data-n="05">The cases</span>
+    <h2 class="h2" id="cases">Seven systems. What each does, who it helped, what it was worth.</h2>
+    <p class="lead">Packed the way an agency packs a case. Open one for the job, the problem, what was built and the result.</p>
+    <div class="cases2">
+    <details class="case2" id="case-1">
+      <summary><span class="k">Case 01 · video production system · a content team</span><h3>The reel engine: a news story in, a finished presenter video out.</h3><p class="one">Finds the story, writes the script, films an AI presenter, edits it, checks every step, and will not move on until each step is proven. A week per video became a day.</p><div class="gains"><span>a week became a day</span><span>9 forced edit steps</span><span>70 checks per video</span><span>nothing posts on its own</span></div><span class="open"></span></summary>
+      <div class="body">
+        <div class="cols"><div><h4>The job</h4><p>Short vertical news videos for social, every week, in the brand’s style, with one consistent presenter.</p></div><div><h4>The problem</h4><p>An outside studio took a week per video. Quality swung from one to the next. Every fix was made by hand and forgotten, so the same faults came back.</p></div><div><h4>What was built</h4><p>One chain from news to delivery. A research step that finds the strange side-effect of a story and keeps a source link for every fact. A script step with a hook checklist the system cannot skip; a person picks one of three. An AI presenter filmed in short takes, each checked word by word against the script, with a test take approved before the rest are paid for. An edit step with six scene templates and nine forced stages, each saving a record. A second AI review that can block, a send guard, and a person’s final yes.</p></div></div>
+<div class="rail" role="list">
+<div class="stage" role="listitem"><span class="num">1</span><span class="fn">news sweep</span><span class="what">6 to 8 angles, every fact with a link</span></div>
+<div class="stage gate" role="listitem"><span class="num">2</span><span class="fn">script</span><span class="what">3 scripts, a 10-row hook check; a person picks one</span></div>
+<div class="stage gate" role="listitem"><span class="num">3</span><span class="fn">presenter</span><span class="what">AI takes checked word by word; test take first</span></div>
+<div class="stage gate" role="listitem"><span class="num">4</span><span class="fn">intake</span><span class="what">timing, head position, said vs written</span></div>
+<div class="stage" role="listitem"><span class="num">5</span><span class="fn">edit</span><span class="what">6 templates, 9 forced stages, a record each</span></div>
+<div class="stage gate" role="listitem"><span class="num">6</span><span class="fn">checks + review</span><span class="what">70 checks, then a cold AI review</span></div>
+<div class="stage human" role="listitem"><span class="num">7</span><span class="fn">a person signs off</span><span class="what">the send guard opens only on green</span></div>
+</div>
+        <p class="zsub">a failed step goes back to its cause, never forward</p>
+        <p class="result">Three videos through the one command; the last one <b>59 seconds, 20 scenes, 70 checks green</b>. Turnaround from a week to a day. Nothing is posted without a person.</p>
+      </div>
+    </details>
+    <details class="case2" id="case-2">
+      <summary><span class="k">Case 02 · film production system · in use</span><h3>The video studio: one link in, a finished product film out, in four hours.</h3><p class="one">A whole production company drawn as one process: research, concepts, storyboard, build, checks, delivery. The person touches it three times: pick the concept, approve the look, approve the final.</p><div class="gains"><span>240-minute clock</span><span>11 films in 3 weeks</span><span>two founders reposted</span><span>premium measured, not felt</span></div><span class="open"></span></summary>
+      <div class="body">
+        <div class="cols"><div><h4>The job</h4><p>A premium product film a day for a public daily series, plus client films, on a tool that renders video from code.</p></div><div><h4>The problem</h4><p>The first films took 5 to 10 hours each and still read as cheap. “Almost like the reference, but something is missing.”</p></div><div><h4>What was built</h4><p>A 46-step process in five lanes. Research agents gather facts with links, the brand’s voice and the trigger. A one-sentence message is written before any concept; seven angles are judged and three become concept cards. The picture is built from real screens cut from the product and a library of 14 reusable moves. Motion, reading time and sound pass measured checks; a critic reviews twice; a person approves the final.</p></div></div>
+        <div class="arch"><span class="eyebrow">The whole studio on one board</span>
+        <div class="map board" data-board="studio" style="--w:953px">
+<svg viewBox="0 0 953 980" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture of the video studio. A person picks a product; research agents gather linked facts, voice and the trigger; a one-sentence message, judged angles and three concept cards come out; the person picks one; the look is built from the real product with a motion library; metrics and a critic check the cut; the person approves; the film ships with a retro." font-family="JetBrains Mono, Menlo, monospace">
+<defs><marker id="m-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#111214"/></marker><marker id="m-sig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff4d1c"/></marker><marker id="m-mut" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6b6d74"/></marker></defs>
+<rect x="28" y="37" width="262" height="261" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="40" y="24" width="83" height="26" fill="#111214"/><text x="48" y="42" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">1 · BRIEF</text>
+<rect x="28" y="345" width="262" height="379" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="40" y="332" width="157" height="26" fill="#111214"/><text x="48" y="350" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">2 · RESEARCH AGENTS</text>
+<text x="205" y="350" font-size="9.5" fill="#6b6d74" letter-spacing=".05em" paint-order="stroke" stroke="#f4f2ec" stroke-width="5" stroke-linejoin="round">PARALLEL</text>
+<rect x="350" y="37" width="262" height="497" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="362" y="24" width="83" height="26" fill="#111214"/><text x="370" y="42" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">3 · WORDS</text>
+<rect x="350" y="581" width="262" height="379" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="362" y="568" width="75" height="26" fill="#111214"/><text x="370" y="586" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">4 · LOOK</text>
+<text x="445" y="586" font-size="9.5" fill="#6b6d74" letter-spacing=".05em" paint-order="stroke" stroke="#f4f2ec" stroke-width="5" stroke-linejoin="round">FROM THE REAL PRODUCT</text>
+<rect x="663" y="37" width="262" height="497" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="675" y="24" width="149" height="26" fill="#111214"/><text x="683" y="42" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">5 · BUILD + CHECKS</text>
+<rect x="663" y="581" width="262" height="379" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="675" y="568" width="75" height="26" fill="#111214"/><text x="683" y="586" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">6 · SHIP</text>
+<path d="M159.0 164 V186" fill="none" stroke="#111214" stroke-width="1.8" marker-end="url(#m-ink)"/>
+<path d="M159.0 282 V376" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<text x="166.0" y="318.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">one link</text>
+<path d="M270 424.0 H302 V116.0 H370" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<text x="372.0" y="62.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">linked facts</text>
+<path d="M270 542.0 H311 V228.5 H370" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M270 660.0 H320 V239.5 H370" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M481.0 164 V186" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M481.0 282 V304" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<text x="488.0" y="296.5" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">3 survive</text>
+<path d="M481.0 400 V422" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<text x="488.0" y="414.5" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">one picked</text>
+<path d="M481.0 518 V612" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M370 810 H329 V660.0 H370" fill="none" stroke="#111214" stroke-width="1.8" marker-end="url(#m-ink)"/>
+<text x="372.0" y="606.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">real screens</text>
+<path d="M592 660.0 H624 V105.0 H683" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M592 896.0 H633 V116.0 H683" fill="none" stroke="#111214" stroke-width="1.8" marker-end="url(#m-ink)"/>
+<text x="685.0" y="62.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">moves by name</text>
+<path d="M794.0 164 V186" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M794.0 282 V304" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M794.0 400 V422" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M794.0 518 V612" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M794.0 708 V730" fill="none" stroke="#111214" stroke-width="1.8" marker-end="url(#m-ink)"/>
+<path d="M794.0 826 V848" fill="none" stroke="#111214" stroke-width="1.8" marker-end="url(#m-ink)"/>
+<path d="M683 266 H642 V127.0 H683" fill="none" stroke="#ff4d1c" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#m-sig)"/>
+<text x="767.1" y="62.0" font-size="9.5" font-weight="700" fill="#ff4d1c" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">binding fail</text>
+<rect x="52" y="72" width="222" height="96" fill="#111214"/>
+<rect x="48" y="68" width="222" height="96" fill="#111214" stroke="#111214" stroke-width="2"/>
+<text x="58" y="87" font-size="12.5" font-weight="700" fill="#ff4d1c">A person picks the</text>
+<text x="58" y="101" font-size="12.5" font-weight="700" fill="#ff4d1c">product</text>
+<text x="58" y="118" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">One link. The clock starts: 240</text>
+<text x="58" y="130.5" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">minutes.</text>
+<rect x="52" y="190" width="222" height="96" fill="#111214"/>
+<rect x="48" y="186" width="222" height="96" fill="#ebe8df" stroke="#111214" stroke-width="2"/>
+<text x="58" y="205" font-size="12.5" font-weight="700" fill="#111214">Intake + budgets</text>
+<text x="58" y="222" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Checks the link loads and sets how</text>
+<text x="58" y="234.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">many tries each loop may take.</text>
+<rect x="52" y="380" width="222" height="96" fill="#111214"/>
+<rect x="48" y="376" width="222" height="96" fill="#ffffff" stroke="#ff4d1c" stroke-width="2"/>
+<text x="58" y="395" font-size="12.5" font-weight="700" fill="#111214">Facts</text>
+<text x="58" y="412" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Every fact with a link to where it was</text>
+<text x="58" y="424.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">published.</text>
+<rect x="155" y="383" width="108" height="14" fill="#ff4d1c" stroke="#ff4d1c" stroke-width="1"/><text x="160" y="393" font-size="8" font-weight="700" fill="#f4f2ec" letter-spacing=".06em">NO LINK, NO FACT</text>
+<rect x="52" y="498" width="222" height="96" fill="#111214"/>
+<rect x="48" y="494" width="222" height="96" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<text x="58" y="513" font-size="12.5" font-weight="700" fill="#111214">Voice + audience</text>
+<text x="58" y="530" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">How the brand speaks; who buys and</text>
+<text x="58" y="542.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">why.</text>
+<rect x="52" y="616" width="222" height="96" fill="#111214"/>
+<rect x="48" y="612" width="222" height="96" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<text x="58" y="631" font-size="12.5" font-weight="700" fill="#111214">The trigger</text>
+<text x="58" y="648" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">The launch, the complaint, the thread</text>
+<text x="58" y="660.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">that makes the film timely.</text>
+<rect x="374" y="72" width="222" height="96" fill="#111214"/>
+<rect x="370" y="68" width="222" height="96" fill="#ffffff" stroke="#ff4d1c" stroke-width="2"/>
+<text x="380" y="87" font-size="12.5" font-weight="700" fill="#111214">One-sentence message</text>
+<text x="380" y="104" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Under 20 words. Written before any</text>
+<text x="380" y="116.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">concept.</text>
+<rect x="374" y="190" width="222" height="96" fill="#111214"/>
+<rect x="370" y="186" width="222" height="96" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<text x="380" y="205" font-size="12.5" font-weight="700" fill="#111214">Angles from 7 lenses</text>
+<text x="380" y="222" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Judged on 7 criteria; at least 3</text>
+<text x="380" y="234.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">survive, else regenerate.</text>
+<rect x="374" y="308" width="222" height="96" fill="#111214"/>
+<rect x="370" y="304" width="222" height="96" fill="#111214" stroke="#111214" stroke-width="2"/>
+<text x="380" y="323" font-size="12.5" font-weight="700" fill="#ff4d1c">3 concept cards</text>
+<text x="380" y="340" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">A tournament picks the three. A person</text>
+<text x="380" y="352.5" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">picks one.</text>
+<rect x="374" y="426" width="222" height="96" fill="#111214"/>
+<rect x="370" y="422" width="222" height="96" fill="#ffffff" stroke="#ff4d1c" stroke-width="2"/>
+<text x="380" y="441" font-size="12.5" font-weight="700" fill="#111214">Beats + hook gate</text>
+<text x="380" y="458" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">The story beat by beat. The first line</text>
+<text x="380" y="470.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">passes six checks.</text>
+<rect x="374" y="616" width="222" height="96" fill="#111214"/>
+<rect x="370" y="612" width="222" height="96" fill="#111214" stroke="#111214" stroke-width="2"/>
+<text x="380" y="631" font-size="12.5" font-weight="700" fill="#ff4d1c">Frame-exact storyboard</text>
+<text x="380" y="648" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Art director rounds until a fresh one</text>
+<text x="380" y="660.5" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">finds nothing. A person approves the</text>
+<text x="380" y="673.0" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">look.</text>
+<rect x="374" y="734" width="222" height="96" fill="#111214"/>
+<rect x="370" y="730" width="222" height="96" fill="#ebe8df" stroke="#111214" stroke-width="2"/>
+<text x="380" y="749" font-size="12.5" font-weight="700" fill="#111214">Real UI, captured once</text>
+<text x="380" y="766" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Screens cut from the product as code,</text>
+<text x="380" y="778.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">never redrawn.</text>
+<rect x="374" y="852" width="222" height="96" fill="#111214"/>
+<rect x="370" y="848" width="222" height="96" fill="#ebe8df" stroke="#111214" stroke-width="2"/>
+<text x="380" y="867" font-size="12.5" font-weight="700" fill="#111214">Motion library</text>
+<text x="380" y="884" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">14 reusable moves, stage, cursor,</text>
+<text x="380" y="896.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">chrome. New moves go back in.</text>
+<rect x="687" y="72" width="222" height="96" fill="#111214"/>
+<rect x="683" y="68" width="222" height="96" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<text x="693" y="87" font-size="12.5" font-weight="700" fill="#111214">Frames built</text>
+<text x="693" y="104" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Rendered from code; every frame</text>
+<text x="693" y="116.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">animated; nothing overlaps.</text>
+<rect x="687" y="190" width="222" height="96" fill="#111214"/>
+<rect x="683" y="186" width="222" height="96" fill="#ffffff" stroke="#ff4d1c" stroke-width="2"/>
+<text x="693" y="205" font-size="12.5" font-weight="700" fill="#111214">Motion metrics vs the bar</text>
+<text x="693" y="222" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Reading time, motion, how words and</text>
+<text x="693" y="234.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">picture arrive. A binding fail cannot</text>
+<text x="693" y="247.0" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">pass.</text>
+<rect x="687" y="308" width="222" height="96" fill="#111214"/>
+<rect x="683" y="304" width="222" height="96" fill="#ffffff" stroke="#ff4d1c" stroke-width="2"/>
+<text x="693" y="323" font-size="12.5" font-weight="700" fill="#111214">Final critic</text>
+<text x="693" y="340" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Two rounds. It advises; the measured</text>
+<text x="693" y="352.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">bar binds.</text>
+<rect x="687" y="426" width="222" height="96" fill="#111214"/>
+<rect x="683" y="422" width="222" height="96" fill="#111214" stroke="#111214" stroke-width="2"/>
+<text x="693" y="441" font-size="12.5" font-weight="700" fill="#ff4d1c">A person approves the</text>
+<text x="693" y="455" font-size="12.5" font-weight="700" fill="#ff4d1c">final</text>
+<text x="693" y="472" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">In their own words. This line opens</text>
+<text x="693" y="484.5" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">delivery.</text>
+<rect x="687" y="616" width="222" height="96" fill="#111214"/>
+<rect x="683" y="612" width="222" height="96" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<text x="693" y="631" font-size="12.5" font-weight="700" fill="#111214">Delivery render + poster</text>
+<text x="693" y="648" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Mastered sound, licensed music.</text>
+<rect x="687" y="734" width="222" height="96" fill="#111214"/>
+<rect x="683" y="730" width="222" height="96" fill="#111214" stroke="#111214" stroke-width="2"/>
+<text x="693" y="749" font-size="12.5" font-weight="700" fill="#ff4d1c">A person posts</text>
+<text x="693" y="766" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">The tool never does.</text>
+<rect x="687" y="852" width="222" height="96" fill="#111214"/>
+<rect x="683" y="848" width="222" height="96" fill="#ebe8df" stroke="#111214" stroke-width="2"/>
+<text x="693" y="867" font-size="12.5" font-weight="700" fill="#111214">Retro</text>
+<text x="693" y="884" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">The numbers and at most one lesson for</text>
+<text x="693" y="896.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">the next film.</text>
+</svg>
+</div>
+        <p class="legend"><span><i class="lg-flow"></i>moving dashes: data flows</span><span><i class="lg-gate"></i>orange outline: a check that can refuse</span><span><i class="lg-ink"></i>black: a person</span><span><i class="lg-fail"></i>orange dashed: the return loop</span><span><i class="lg-habit"></i>grey dotted: a habit or a timer</span></p></div>
+        <p class="result"><b>11 films in three weeks.</b> Two founders reposted theirs. Each film reuses the library, so the next one costs less.</p>
+      </div>
+    </details>
+    <details class="case2" id="case-3">
+      <summary><span class="k">Case 03 · research agent · for scripts and news</span><h3>The news researcher: one story in, the strange side-effect out, every fact with a link.</h3><p class="one">Reads the whole article, the top comments and the data behind a news story, then ranks 6 to 8 angles by how hard they stop a scroll. Scripts cannot start without its file.</p><div class="gains"><span>6 to 8 scored angles</span><span>a source link per fact</span><span>four lenses</span><span>refuses stale research</span></div><span class="open"></span></summary>
+      <div class="body">
+        <div class="cols"><div><h4>The job</h4><p>Give writers a concrete, surprising angle on a news story, fast, with proof behind it.</p></div><div><h4>The problem</h4><p>A video that opens on the headline gets scrolled past. Finding the strange detail took hours of reading, and facts went unchecked.</p></div><div><h4>What was built</h4><p>A five-step hunt: full articles read to the end, the top comments, free live data, keyword sweeps for physical consequences, then a cause-and-effect map through four lenses: things, money, power, ordinary people. Candidates are scored on five criteria. The file carries a source link for every fact and a log of every judgment call. The script step refuses to run without a fresh file.</p></div></div>
+<div class="rail" role="list">
+<div class="stage" role="listitem"><span class="num">1</span><span class="fn">read to the end</span><span class="what">the strange details live in the lower half</span></div>
+<div class="stage" role="listitem"><span class="num">2</span><span class="fn">mine the comments</span><span class="what">what readers noticed and journalists missed</span></div>
+<div class="stage" role="listitem"><span class="num">3</span><span class="fn">pull the data</span><span class="what">ship, flight, price and trend feeds, labelled live or lagging</span></div>
+<div class="stage" role="listitem"><span class="num">4</span><span class="fn">map cause and effect</span><span class="what">four lenses, disagreements recorded</span></div>
+<div class="stage gate" role="listitem"><span class="num">5</span><span class="fn">score the angles</span><span class="what">6 to 8 candidates, five criteria</span></div>
+<div class="stage gate" role="listitem"><span class="num">6</span><span class="fn">file it</span><span class="what">a source link for every fact, one log line</span></div>
+</div>
+        <p class="result">Three stories hunted, <b>7 to 8 angles each</b>, winners scored 42 to 44 of 50. A claim that went bad a day later was caught and reworded. The same build can watch a market, a competitor or a topic for any team.</p>
+      </div>
+    </details>
+    <details class="case2" id="case-4">
+      <summary><span class="k">Case 04 · shared knowledge system · in use</span><h3>The marketing library: a team memory of what works, and it writes.</h3><p class="one">Send it any reel, link or screenshot. It takes the piece apart, files the reusable pattern, and later writes hooks, calls to action and scripts from patterns that already worked. Built so a whole team can read it and add to it.</p><div class="gains"><span>34 reel breakdowns</span><span>70 hook patterns</span><span>16 call-to-action patterns</span><span>mirrored to Notion</span></div><span class="open"></span></summary>
+      <div class="body">
+        <div class="cols"><div><h4>The job</h4><p>Keep every good hook, structure, format and call to action from the feed in one place, reusable by anyone on the team, so nobody writes from a blank page.</p></div><div><h4>The problem</h4><p>Inspiration dies in screenshots. Nobody re-reads a swipe file. A new writer starts from zero, and the best writer’s taste leaves with them.</p></div><div><h4>What was built</h4><p>A skill that transcribes a clip and breaks it into twelve parts: packaging, the first three seconds, structure, pacing, visuals, on-screen text, sound, stats, the call to action, why it works, how to recreate it, how to remix it. Specifics become a pattern with slots; duplicates are merged; a one-file index is rebuilt; a drift check goes red when the index, the log or the Notion mirror fall behind. On request it writes options from proven patterns, each with the pattern it used and a one-line why.</p></div></div>
+        <div class="arch"><span class="eyebrow">The loop that gets smarter</span>
+        <div class="map board" data-board="kb" style="--w:1268px">
+<svg viewBox="0 0 1268 572" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture of the marketing library. A link or clip goes through transcribe, break down, abstract to a pattern, classify and file. The library is plain files with an index and a results log. Generation reads the index and the results; a person posts; the outcome goes back into the results log; the files mirror one way to Notion." font-family="JetBrains Mono, Menlo, monospace">
+<defs><marker id="m-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#111214"/></marker><marker id="m-sig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff4d1c"/></marker><marker id="m-mut" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6b6d74"/></marker></defs>
+<rect x="28" y="46" width="262" height="261" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="40" y="33" width="60" height="26" fill="#111214"/><text x="48" y="51" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">1 · IN</text>
+<rect x="338" y="46" width="262" height="497" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="350" y="33" width="90" height="26" fill="#111214"/><text x="358" y="51" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">2 · INGEST</text>
+<text x="448" y="51" font-size="9.5" fill="#6b6d74" letter-spacing=".05em" paint-order="stroke" stroke="#f4f2ec" stroke-width="5" stroke-linejoin="round">SAVES ONLY ON A YES</text>
+<rect x="651" y="46" width="262" height="379" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="663" y="33" width="127" height="26" fill="#111214"/><text x="671" y="51" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">3 · THE LIBRARY</text>
+<text x="798" y="51" font-size="9.5" fill="#6b6d74" letter-spacing=".05em" paint-order="stroke" stroke="#f4f2ec" stroke-width="5" stroke-linejoin="round">PLAIN FILES</text>
+<rect x="973" y="46" width="262" height="379" fill="none" stroke="#111214" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="985" y="33" width="164" height="26" fill="#111214"/><text x="993" y="51" font-size="12" font-weight="800" fill="#f4f2ec" letter-spacing=".02em">4 · GENERATE + SHARE</text>
+<path d="M270 125.0 H302 V125.0 H358" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M270 243.0 H311 V21 H925 V114.0 H993" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<text x="618.0" y="17.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="middle" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">a request</text>
+<path d="M469.0 173 V195" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M469.0 291 V313" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M469.0 409 V431" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M580 473.5 H612 V125.0 H671" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<text x="673.0" y="71.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">writes</text>
+<path d="M580 484.5 H621 V243.0 H671" fill="none" stroke="#111214" stroke-width="1.8" marker-end="url(#m-ink)"/>
+<text x="673.0" y="189.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">rebuilds</text>
+<path d="M893 243.0 H934 V125.0 H993" fill="none" stroke="#111214" stroke-width="1.8" marker-end="url(#m-ink)"/>
+<text x="995.0" y="71.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">routes</text>
+<path d="M893 361.0 H943 V136.0 H993" fill="none" stroke="#111214" stroke-width="1.8" marker-end="url(#m-ink)"/>
+<text x="1037.2" y="71.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">re-weights</text>
+<path d="M893 125.0 H952 V361.0 H993" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<text x="995.0" y="307.0" font-size="9.5" font-weight="700" fill="#111214" text-anchor="start" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">one-way mirror</text>
+<path d="M1104.0 173 V195" fill="none" stroke="#111214" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#m-ink)" class="d-move"/>
+<path d="M1215 243.0 H1247 V555 H630 V361.0 H671" fill="none" stroke="#ff4d1c" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#m-sig)"/>
+<text x="938.5" y="551.0" font-size="9.5" font-weight="700" fill="#ff4d1c" text-anchor="middle" paint-order="stroke" stroke="#f4f2ec" stroke-width="4" stroke-linejoin="round">the outcome is logged and re-weights the next generation</text>
+<rect x="52" y="81" width="222" height="96" fill="#111214"/>
+<rect x="48" y="77" width="222" height="96" fill="#ebe8df" stroke="#111214" stroke-width="2"/>
+<text x="58" y="96" font-size="12.5" font-weight="700" fill="#111214">A reel, a URL, a</text>
+<text x="58" y="110" font-size="12.5" font-weight="700" fill="#111214">screenshot</text>
+<text x="58" y="127" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Or pasted text. Sent with one word:</text>
+<text x="58" y="139.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">save, or teardown.</text>
+<rect x="52" y="199" width="222" height="96" fill="#111214"/>
+<rect x="48" y="195" width="222" height="96" fill="#111214" stroke="#111214" stroke-width="2"/>
+<text x="58" y="214" font-size="12.5" font-weight="700" fill="#ff4d1c">A request</text>
+<text x="58" y="231" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">&quot;Five hooks for X&quot;, &quot;a CTA for Y&quot;, &quot;a</text>
+<text x="58" y="243.5" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">script from the saved patterns&quot;.</text>
+<rect x="362" y="81" width="222" height="96" fill="#111214"/>
+<rect x="358" y="77" width="222" height="96" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<text x="368" y="96" font-size="12.5" font-weight="700" fill="#111214">Transcribe</text>
+<text x="368" y="113" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Audio and video to words; frames</text>
+<text x="368" y="125.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">sampled for the visual read.</text>
+<rect x="362" y="199" width="222" height="96" fill="#111214"/>
+<rect x="358" y="195" width="222" height="96" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<text x="368" y="214" font-size="12.5" font-weight="700" fill="#111214">Break down</text>
+<text x="368" y="231" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Hook, structure, visuals, text, sound,</text>
+<text x="368" y="243.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">CTA. A recipe comes out.</text>
+<rect x="362" y="317" width="222" height="96" fill="#111214"/>
+<rect x="358" y="313" width="222" height="96" fill="#ffffff" stroke="#ff4d1c" stroke-width="2"/>
+<text x="368" y="332" font-size="12.5" font-weight="700" fill="#111214">Abstract to a</text>
+<text x="368" y="346" font-size="12.5" font-weight="700" fill="#111214">pattern</text>
+<text x="368" y="363" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Specifics become [slots]. The original</text>
+<text x="368" y="375.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">line stays as the example, with its</text>
+<text x="368" y="388.0" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">source.</text>
+<rect x="478" y="320" width="95" height="14" fill="#ff4d1c" stroke="#ff4d1c" stroke-width="1"/><text x="483" y="330" font-size="8" font-weight="700" fill="#f4f2ec" letter-spacing=".06em">NEVER VERBATIM</text>
+<rect x="362" y="435" width="222" height="96" fill="#111214"/>
+<rect x="358" y="431" width="222" height="96" fill="#ffffff" stroke="#ff4d1c" stroke-width="2"/>
+<text x="368" y="450" font-size="12.5" font-weight="700" fill="#111214">Classify, dedupe, file</text>
+<text x="368" y="467" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Hook, format, CTA, script, offer. A</text>
+<text x="368" y="479.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">new bucket needs a yes first.</text>
+<rect x="675" y="81" width="222" height="96" fill="#111214"/>
+<rect x="671" y="77" width="222" height="96" fill="#ebe8df" stroke="#111214" stroke-width="2"/>
+<text x="681" y="96" font-size="12.5" font-weight="700" fill="#111214">99 files in 14</text>
+<text x="681" y="110" font-size="12.5" font-weight="700" fill="#111214">folders</text>
+<text x="681" y="127" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Hooks, scripts, CTAs, formats,</text>
+<text x="681" y="139.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">teardowns, techniques, video spec,</text>
+<text x="681" y="152.0" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">funnels. Pushed to GitHub on every</text>
+<rect x="821" y="84" width="65" height="14" fill="#ffffff" stroke="#111214" stroke-width="1"/><text x="826" y="94" font-size="8" font-weight="700" fill="#111214" letter-spacing=".06em">BACKED UP</text>
+<rect x="675" y="199" width="222" height="96" fill="#111214"/>
+<rect x="671" y="195" width="222" height="96" fill="#ebe8df" stroke="#111214" stroke-width="2"/>
+<text x="681" y="214" font-size="12.5" font-weight="700" fill="#111214">The index</text>
+<text x="681" y="231" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">One file that routes an agent to the</text>
+<text x="681" y="243.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">right folder. Rebuilt after every</text>
+<text x="681" y="256.0" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">teardown.</text>
+<rect x="675" y="317" width="222" height="96" fill="#111214"/>
+<rect x="671" y="313" width="222" height="96" fill="#ebe8df" stroke="#111214" stroke-width="2"/>
+<text x="681" y="332" font-size="12.5" font-weight="700" fill="#111214">Results log</text>
+<text x="681" y="349" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">What was posted and what happened.</text>
+<text x="681" y="361.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Re-weights the next generation.</text>
+<rect x="997" y="81" width="222" height="96" fill="#111214"/>
+<rect x="993" y="77" width="222" height="96" fill="#ffffff" stroke="#111214" stroke-width="2"/>
+<text x="1003" y="96" font-size="12.5" font-weight="700" fill="#111214">Generate</text>
+<text x="1003" y="113" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Assets written from proven patterns,</text>
+<text x="1003" y="125.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">ranked by what worked for this</text>
+<text x="1003" y="138.0" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">account.</text>
+<rect x="997" y="199" width="222" height="96" fill="#111214"/>
+<rect x="993" y="195" width="222" height="96" fill="#111214" stroke="#111214" stroke-width="2"/>
+<text x="1003" y="214" font-size="12.5" font-weight="700" fill="#ff4d1c">A person posts</text>
+<text x="1003" y="231" font-size="10" fill="rgba(244,242,236,.88)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">Then logs the outcome in one line.</text>
+<rect x="997" y="317" width="222" height="96" fill="#111214"/>
+<rect x="993" y="313" width="222" height="96" fill="#ebe8df" stroke="#111214" stroke-width="2"/>
+<text x="1003" y="332" font-size="12.5" font-weight="700" fill="#111214">Notion mirror</text>
+<text x="1003" y="349" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">One-way. The team reads it; the files</text>
+<text x="1003" y="361.5" font-size="10" fill="rgba(17,18,20,.8)" font-family="Instrument Sans, Helvetica, Arial, sans-serif">stay the source.</text>
+</svg>
+</div>
+        <p class="legend"><span><i class="lg-flow"></i>moving dashes: data flows</span><span><i class="lg-gate"></i>orange outline: a check that can refuse</span><span><i class="lg-ink"></i>black: a person</span><span><i class="lg-fail"></i>orange dashed: the return loop</span><span><i class="lg-habit"></i>grey dotted: a habit or a timer</span></p></div>
+        <p class="result"><b>103 files in 14 sections</b>, 34 full reel breakdowns, 70 hook patterns, 16 call-to-action patterns, mirrored to Notion and backed up every 10 minutes. The goal: everyone feeds it what they see working, and everyone writes from proven patterns.</p>
+      </div>
+    </details>
+    <details class="case2" id="case-5">
+      <summary><span class="k">Case 05 · growth research agent · built as a working sample</span><h3>A growth researcher for every channel, from four angles at once.</h3><p class="one">For each of 104 marketing areas and channels, an agent researches the channel, the audience, the rivals and the product’s own assets, then writes a plan with a kill rule. A second agent checks every stage. People keep every public action.</p><div class="gains"><span>104 areas and channels</span><span>4 angles each</span><span>90 stage gates passed</span><span>never posts, pays or messages</span></div><span class="open"></span></summary>
+      <div class="body">
+        <div class="cols"><div><h4>The job</h4><p>A researched growth plan for a software product across every channel, in days, built as a working sample for a hiring interview.</p></div><div><h4>The problem</h4><p>Growth planning by hand covers the three channels someone already knows. The other forty are never researched, so the plan is a guess with a budget.</p></div><div><h4>What was built</h4><p>A board of 104 cells. Each moves through gated stages: assess, research, analysis, strategy, system design, shadow run. Four angles per channel: how the channel works, who the audience is in their own words, how rivals show up, and what the product already has. A critic challenges every claim; a play scored under 7 of 10 goes back; a stage without proof blocks the next. When it needs data it was not given, it stops and says so instead of guessing.</p></div></div>
+<div class="rail" role="list">
+<div class="stage" role="listitem"><span class="num">1</span><span class="fn">assess</span><span class="what">the goal, the one number it moves, a tested data plan</span></div>
+<div class="stage" role="listitem"><span class="num">2</span><span class="fn">research</span><span class="what">channel, audience, rivals, own assets; 20+ winning posts saved</span></div>
+<div class="stage gate" role="listitem"><span class="num">3</span><span class="fn">analysis</span><span class="what">counts, not impressions; a critic challenges each claim</span></div>
+<div class="stage gate" role="listitem"><span class="num">4</span><span class="fn">strategy</span><span class="what">3 to 5 plays with a kill rule; under 7 of 10 goes back</span></div>
+<div class="stage" role="listitem"><span class="num">5</span><span class="fn">system design</span><span class="what">one agent per job, budgets, human gates</span></div>
+<div class="stage human" role="listitem"><span class="num">6</span><span class="fn">shadow run</span><span class="what">drafts queued, scored; a person blind-grades ten</span></div>
+</div>
+        <p class="result"><b>90 stage gates passed</b> over two nights of unattended runs, 24 clean stops for missing access, and a queue of drafts for people to post from. Nothing went public on its own.</p>
+      </div>
+    </details>
+    <details class="case2" id="case-6">
+      <summary><span class="k">Case 06 · monitoring · a content team</span><h3>The trend radar: sees which posts are taking off, three times a day.</h3><p class="one">Reads 14 accounts morning, noon and evening, scores each post against its own normal pace, and sends the top ten risers to the team’s chat. A public board shows the rest.</p><div class="gains"><span>181 runs in 102 days</span><span>3 runs a day, no operator</span><span>29 self-checks per run</span><span>open source</span></div><span class="open"></span></summary>
+      <div class="body">
+        <div class="cols"><div><h4>The job</h4><p>Tell a content team what is rising in their niche before it peaks, without anyone scrolling feeds.</p></div><div><h4>The problem</h4><p>Scrolling by hand three times a day finds what already peaked. The team reacted to yesterday.</p></div><div><h4>What was built</h4><p>A run that reads the accounts through a logged-in browser, re-measures every post under 72 hours old, works out pace and heat, labels what is breaking out, sends the top ten to Telegram once each, and publishes a board. Twenty-nine checks of the scoring maths run first; a failed check aborts the run.</p></div></div>
+<div class="rail" role="list">
+<div class="stage" role="listitem"><span class="num">1</span><span class="fn">read</span><span class="what">14 accounts, 25 newest posts each</span></div>
+<div class="stage" role="listitem"><span class="num">2</span><span class="fn">re-measure</span><span class="what">likes, views, replies for every post under 72 h</span></div>
+<div class="stage gate" role="listitem"><span class="num">3</span><span class="fn">score</span><span class="what">pace and heat against the post’s own normal</span></div>
+<div class="stage" role="listitem"><span class="num">4</span><span class="fn">alert</span><span class="what">top ten risers to the team’s chat, once each</span></div>
+<div class="stage human" role="listitem"><span class="num">5</span><span class="fn">publish</span><span class="what">a public board, sorted by pace</span></div>
+</div>
+        <p class="result"><b>181 runs in 102 days</b> without an operator, 41,000 growth snapshots, a public board. The code is open: <a href="https://github.com/chopsiiev-web/mr-board">mr-board on GitHub</a>.</p>
+      </div>
+    </details>
+    <details class="case2" id="case-7">
+      <summary><span class="k">Case 07 · writing system · in use</span><h3>Three scripts per story, each with an opening line that passed ten checks.</h3><p class="one">A news story goes in. Three short-video scripts come out, each a different angle, each opening line stress-tested: five tries, six checks, one “so what?” test. The checker refuses a script without its proof.</p><div class="gains"><span>3 scripts per story</span><span>a hook under 12 words</span><span>a 10-row checklist</span><span>14 refusals built in</span></div><span class="open"></span></summary>
+      <div class="body">
+        <div class="cols"><div><h4>The job</h4><p>Scripts a presenter can shoot the same day, with proof behind every line and an opening that stops a scroll.</p></div><div><h4>The problem</h4><p>Scripts came out long, with stale numbers, no proof of research and weak openings. Advice in a document did not stop any of it.</p></div><div><h4>What was built</h4><p>A fixed shape, a word band of 144 to 192, no digits in spoken lines, a hook under 12 words, a ten-row scorecard with real evidence in every row, and a checker that runs at the end of every session and refuses a script with a row missing. Only a person can waive it, in writing.</p></div></div>
+
+        <p class="result"><b>Nine news scripts in three batches</b>; the approved one went straight into production. The quality no longer depends on anyone’s discipline that day.</p>
+      </div>
+    </details>
+    </div>
+  </section>
+
+  <section class="step" aria-labelledby="why" data-n="06">
+    <span class="big" aria-hidden="true">06</span>
+    <span class="eyebrow" data-n="06">Why me</span>
+    <h2 class="h2" id="why">Ten years of removing the same thing: the step a person does because nobody wrote it down.</h2>
+    <div class="me">
+      <img src="../media/murad-200.jpg" alt="Murad Chopsiiev" width="200" height="200">
+      <ul class="rules">
+        <li><b>Process first, tools second</b><span>Ran a marketing agency, built growth at startups, launched products. Every job had repeat work and friction. Every time, I ended up removing it.</span></li>
+        <li><b>Marketing is one application</b><span>The cases here are marketing because that is where the last years went. The method is the same for ops, sales, support and finance.</span></li>
+        <li><b>Rules as checks</b><span>Every rule becomes a check that runs itself. A caught mistake cannot pass again.</span></li>
+        <li><b>A person at every gate</b><span>Agents draft. A person approves every post, payment and message.</span></li>
+        <li><b>Stops instead of spinning</b><span>After three failures the process stops and asks a person. Nothing runs up a bill in a loop.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="step order" aria-labelledby="ask" id="order" data-n="07">
+    <span class="big" aria-hidden="true">07</span>
+    <span class="eyebrow" data-n="07">The ask</span>
+    <h2 class="h2" id="ask">Tell me what your team does by hand.</h2>
+    <p class="lead">Within a day you get a one-page plan: what to automate first, the hours it saves, and what the build costs.</p>
+    <form class="form" id="brief" novalidate>
+      <div class="field"><span class="eyebrow">A short brief</span></div>
+      <div class="field"><label for="f-email">Your email</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required placeholder="you@company.com"></div>
+      <div class="field"><label for="f-company">Company and what it does <em>optional</em></label><input id="f-company" name="company" type="text" autocomplete="organization" placeholder="name, product, team size"></div>
+      <div class="field"><label for="f-task">The work done by hand</label><textarea id="f-task" name="task" rows="3" required placeholder="what it is, how often, who does it"></textarea></div>
+      <div class="field"><label for="f-instead">What should happen instead <em>optional</em></label><textarea id="f-instead" name="instead" rows="2" placeholder="the outcome you want, or leave it to me"></textarea></div>
+      <p class="err" id="f-err" aria-live="polite"></p>
+      <div class="actions"><button class="btn" type="submit">Send by email</button><button class="btn alt" type="button" id="f-tg">Send on Telegram</button><button class="btn alt" type="button" id="f-copy">Copy the brief</button><span class="eyebrow">nothing leaves this page by itself</span></div>
+      <div class="out" id="f-out"><span class="eyebrow">your brief</span><pre id="f-pre"></pre></div>
+      <p class="next" id="f-next" aria-live="polite">No forms on outside services here. The brief opens in your email or Telegram; you press send.</p>
+    </form>
+    <p class="row contact"><a href="mailto:chopsiiev@gmail.com">chopsiiev@gmail.com</a><a href="https://t.me/Hadzhymurad">Telegram</a><a href="https://www.linkedin.com/in/hadzhymurad/">LinkedIn</a><a href="https://x.com/chopsiiev60091">X</a><a href="../cv/Hadzhymurad-Chopsiiev-CV.pdf">CV</a></p>
+  </section>
+  <footer>Lisbon. Remote across Europe. Open source: <a href="https://github.com/chopsiiev-web/note-page">note-page</a>, a writing page for Claude Code, and <a href="https://github.com/chopsiiev-web/mr-board">mr-board</a>, the trend radar. Numbers come from the tools’ own logs; client and employer data stays out.</footer>
+</main>
+<script>
+  const form = document.getElementById('brief'), err = document.getElementById('f-err'), next = document.getElementById('f-next'), out = document.getElementById('f-out'), pre = document.getElementById('f-pre');
+  const build = () => {
+    const d = Object.fromEntries(new FormData(form).entries());
+    const bad = [...form.querySelectorAll('[required]')].find(i => !i.checkValidity());
+    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : 'Describe the work done by hand.'; bad.focus(); return null; }
+    err.textContent = '';
+    const text = ['Email: ' + d.email, 'Company: ' + (d.company || '-'), 'Work done by hand: ' + d.task, 'Should happen instead: ' + (d.instead || '-')].join('\n');
+    pre.textContent = text; out.classList.add('show'); return { d, text };
+  };
+  form.addEventListener('submit', e => { e.preventDefault(); const b = build(); if (!b) return;
+    location.href = 'mailto:chopsiiev@gmail.com?subject=' + encodeURIComponent('Automation brief: ' + (b.d.company || b.d.email)) + '&body=' + encodeURIComponent(b.text);
+    next.textContent = 'Your email app opened with the brief. If it did not, copy the brief above and send it to chopsiiev@gmail.com.'; });
+  document.getElementById('f-tg').addEventListener('click', () => { const b = build(); if (!b) return;
+    const t = encodeURIComponent(b.text); window.open('https://t.me/Hadzhymurad?text=' + t + '&draft_text=' + t, '_blank', 'noopener');
+    next.textContent = 'Telegram opened with the brief in the message box. Press send there.'; });
+  document.getElementById('f-copy').addEventListener('click', async (e) => { const b = build(); if (!b) return;
+    try { await navigator.clipboard.writeText(b.text); e.target.textContent = 'Copied'; } catch (x) { e.target.textContent = 'Select the text above and copy it'; } });
+  document.querySelectorAll('.board').forEach(b => b.addEventListener('click', () => { b.classList.toggle('zoom'); if (!b.classList.contains('zoom')) b.scrollLeft = 0; }));
+</script>
+</body>
+</html>
