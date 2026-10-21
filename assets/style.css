@@ -365,3 +365,13 @@ footer { font: 400 .8rem/1.5 var(--mono); color: var(--muted); }
 
 .path2 .btn.pay { justify-self: start; text-decoration: none; display: inline-block; margin-top: .4rem; }
 .path2 .btn.pay + .eyebrow { margin-top: -.2rem; }
+
+.top { flex-wrap: wrap; }
+.top .social { display: flex; gap: 1rem; margin-left: auto; }
+.top .social a { color: var(--ink); text-decoration-color: var(--signal); text-underline-offset: 4px; }
+.top .loc { margin-left: auto; }
+.top .social + .loc, .top .loc + .social { margin-left: 0; }
+@media (max-width: 700px) { .top { gap: .5rem 1rem; } .top .loc { display: none; } }
+
+.me .rules { grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+.cell video { object-fit: contain; background: #000; }

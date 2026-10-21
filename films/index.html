@@ -17,6 +17,7 @@
   <header class="top">
     <span>Murad Chopsiiev</span>
     <span class="loc">Films for software products · Lisbon · remote</span>
+    <nav class="social"><a href="https://www.linkedin.com/in/hadzhymurad/">LinkedIn</a><a href="https://x.com/chopsiiev60091">X</a></nav>
   </header>
 
   <section class="hero" aria-labelledby="promise">
@@ -331,7 +332,7 @@
       <button class="cell" type="button" data-src="../media/cua.mp4" aria-label="Play Cua"><img src="../media/cua.jpg" alt="" loading="lazy" width="1600" height="900"><span class="cap">Cua · 46 s</span><span class="play" aria-hidden="true">▶ SOUND</span></button>
       <button class="cell" type="button" data-src="../media/jambuild.mp4" aria-label="Play jambuild"><img src="../media/jambuild.jpg" alt="" loading="lazy" width="1600" height="900"><span class="cap">jambuild · 20 s</span><span class="play" aria-hidden="true">▶ SOUND</span></button>
       <button class="cell" type="button" data-src="../media/blueprint.mp4" aria-label="Play Blueprint"><img src="../media/blueprint.jpg" alt="" loading="lazy" width="1600" height="900"><span class="cap">Blueprint · 31 s</span><span class="play" aria-hidden="true">▶ SOUND</span></button>
-      <button class="cell tall" type="button" data-src="../media/explainer-pm.mp4" aria-label="Play the explainer"><img src="../media/explainer-pm.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="cap">Explainer · 65 s</span><span class="play" aria-hidden="true">▶ SOUND</span></button>
+      <button class="cell" type="button" data-src="../media/explainer-pm.mp4" aria-label="Play the explainer"><img src="../media/explainer-pm.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="cap">Explainer · 65 s</span><span class="play" aria-hidden="true">▶ SOUND</span></button>
       <button class="cell" type="button" data-src="../media/testerarmy.mp4" aria-label="Play TesterArmy"><img src="../media/testerarmy.jpg" alt="" loading="lazy" width="1600" height="900"><span class="cap">TesterArmy · 23 s</span><span class="play" aria-hidden="true">▶ SOUND</span></button>
       <button class="cell" type="button" data-src="../media/willow.mp4" aria-label="Play Willow"><img src="../media/willow.jpg" alt="" loading="lazy" width="1600" height="900"><span class="cap">Willow · 26 s</span><span class="play" aria-hidden="true">▶ SOUND</span></button>
       <button class="cell" type="button" data-src="../media/superset.mp4" aria-label="Play Superset"><img src="../media/superset.jpg" alt="" loading="lazy" width="1600" height="900"><span class="cap">Superset · 19 s</span><span class="play" aria-hidden="true">▶ SOUND</span></button>
@@ -423,7 +424,7 @@
 
   // the brief: no outside service. It becomes an email, a Telegram message, or text to copy.
   const form = document.getElementById('brief'), err = document.getElementById('f-err'), next = document.getElementById('f-next');
-  const TG = { token: '8895956091:AAFKd_nAwF_FHgLZr74kzUX6tV1T1p649hM', chat: '56646886' };
+  const TG = { token: '8895956091:AAFKd_nAwF_FHgLZr74kzUX6tV1T1p649hM', chat: '56646886' }, SRC = 'Films page';
   form.addEventListener('submit', async e => { e.preventDefault();
     const d = Object.fromEntries(new FormData(form).entries());
     const bad = [...form.querySelectorAll('[required]')].find(i => !i.checkValidity());
@@ -432,7 +433,7 @@
     const text = ['Film: ' + (d.kind || 'not sure yet'), 'Email: ' + d.email, 'Product: ' + d.product, 'Launch date: ' + (d.launch_date || '-'), 'Main thing to say: ' + (d.message || '-'), 'References: ' + (d.references || '-'), 'Sources or draft script: ' + (d.sources || '-')].join('\n');
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
     try {
-      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Film brief\n' + text }) });
+      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Film brief\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text }) });
       if (!r.ok) throw new Error(String(r.status));
       btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; location.href = '../thanks/'; return;
     } catch (x) {

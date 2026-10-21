@@ -17,6 +17,7 @@
   <header class="top">
     <span>Murad Chopsiiev</span>
     <span class="loc">AI systems · Lisbon · remote</span>
+    <nav class="social"><a href="https://www.linkedin.com/in/hadzhymurad/">LinkedIn</a><a href="https://x.com/chopsiiev60091">X</a></nav>
   </header>
 
   <section class="hero" aria-labelledby="promise">
@@ -485,7 +486,7 @@
 </main>
 <script>
   const form = document.getElementById('brief'), err = document.getElementById('f-err'), next = document.getElementById('f-next');
-  const TG = { token: '8895956091:AAFKd_nAwF_FHgLZr74kzUX6tV1T1p649hM', chat: '56646886' };
+  const TG = { token: '8895956091:AAFKd_nAwF_FHgLZr74kzUX6tV1T1p649hM', chat: '56646886' }, SRC = 'AI systems page';
   form.addEventListener('submit', async e => { e.preventDefault();
     const d = Object.fromEntries(new FormData(form).entries());
     const bad = [...form.querySelectorAll('[required]')].find(i => !i.checkValidity());
@@ -494,7 +495,7 @@
     const text = ['Email: ' + d.email, 'Company: ' + (d.company || '-'), 'Work done by hand: ' + d.task, 'Should happen instead: ' + (d.instead || '-')].join('\n');
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
     try {
-      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Automation brief\n' + text }) });
+      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Automation brief\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text }) });
       if (!r.ok) throw new Error(String(r.status));
       btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; location.href = '../thanks/'; return;
     } catch (x) {
