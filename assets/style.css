@@ -377,3 +377,5 @@ footer { font: 400 .8rem/1.5 var(--mono); color: var(--muted); }
 .cell video { object-fit: contain; background: #000; }
 .row.contact { display: flex; flex-wrap: wrap; gap: .6rem 1.8rem; font: 500 .95rem/1 var(--mono); }
 .row.contact a { color: var(--ink); text-decoration-color: var(--signal); text-underline-offset: 4px; }
+
+.pains.four { grid-template-columns: repeat(auto-fit, minmax(min(100%, 27rem), 1fr)); }

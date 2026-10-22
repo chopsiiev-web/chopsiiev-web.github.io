@@ -50,7 +50,7 @@
   form.addEventListener('submit', async e => { e.preventDefault();
     const d = Object.fromEntries(new FormData(form).entries());
     const bad = [...form.querySelectorAll('[required]')].find(i => !i.checkValidity());
-    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : 'Add the link to the product.'; bad.focus(); return; }
+    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Add the link to the product.'); bad.focus(); return; }
     err.textContent = '';
     const text = ['Email: ' + d.email, 'Product: ' + d.product, 'Notes: ' + (d.message || '-')].join('\n');
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
