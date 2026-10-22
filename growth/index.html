@@ -203,7 +203,7 @@
 </main>
 <script>
   const form = document.getElementById('brief'), err = document.getElementById('f-err'), next = document.getElementById('f-next');
-  const TG = { token: '8895956091:AAFKd_nAwF_FHgLZr74kzUX6tV1T1p649hM', chat: '56646886' }, SRC = 'Growth page';
+  const RELAY = 'https://brief-relay.chopsiiev.workers.dev', SRC = 'Growth page';
   form.addEventListener('submit', async e => { e.preventDefault();
     const d = Object.fromEntries(new FormData(form).entries());
     const bad = [...form.querySelectorAll('[required]')].find(i => !i.checkValidity());
@@ -213,7 +213,7 @@
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
     const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 8000);
     try {
-      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Growth brief\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text }), signal: ctl.signal });
+      const r = await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Growth brief\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text, website: (form.website && form.website.value) || '' }), signal: ctl.signal });
       clearTimeout(timer);
       if (!r.ok) throw new Error(String(r.status));
       btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; if (!location.pathname.includes('/thanks')) location.href = '../thanks/'; return;
