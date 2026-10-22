@@ -28,8 +28,9 @@
     <div class="rail" role="list">
       <div class="stage" role="listitem"><span class="num">1</span><span class="fn">Within a day</span><span class="what">A reply from chopsiiev@gmail.com: the slot for a product film, or a time for a call about an explainer or an automation.</span></div>
       <div class="stage gate" role="listitem"><span class="num">2</span><span class="fn">Send what is missing</span><span class="what">If you paid before sending the brief: the link to your product and the main thing to say, by email or on Telegram.</span></div>
-      <div class="stage human" role="listitem"><span class="num">3</span><span class="fn">The clock starts</span><span class="what">Product film: two days from the moment the payment and the link are both in. Explainer: dates agreed on the call.</span></div>
+      <div class="stage human" role="listitem"><span class="num">3</span><span class="fn">The clock starts</span><span class="what">Product film: two working days from the moment the payment and the link are both in. Explainer: dates agreed on the call.</span></div>
     </div>
+    <p class="row"><a class="btn pay" href="https://buy.stripe.com/eVqcN67Lg7oPddObYU48000" target="_blank" rel="noopener">Pay EUR 499 for a product film</a> <span class="eyebrow">only if you have not paid yet</span></p>
     <form class="form" id="brief" novalidate>
       <div class="field"><span class="eyebrow">Paid already, or want to add something? Send it here</span></div>
       <div class="field"><label for="f-email">Your email</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required placeholder="you@company.com"></div>
@@ -54,15 +55,18 @@
     err.textContent = '';
     const text = ['Email: ' + d.email, 'Product: ' + d.product, 'Notes: ' + (d.message || '-')].join('\n');
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
+    const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 8000);
     try {
-      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Brief after payment\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text }) });
+      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Brief after payment\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text }), signal: ctl.signal });
+      clearTimeout(timer);
       if (!r.ok) throw new Error(String(r.status));
       btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; if (!location.pathname.includes('/thanks')) location.href = '../thanks/'; return;
     } catch (x) {
-      btn.disabled = false; btn.textContent = 'Send the brief';
-      try { await navigator.clipboard.writeText(text); } catch (y) {}
-      location.href = 'mailto:chopsiiev@gmail.com?subject=' + encodeURIComponent('Brief: ' + d.product) + '&body=' + encodeURIComponent(text);
-      next.innerHTML = 'Sending from the page failed, so your email app opened with the brief inside. The brief is also copied, in case you prefer Telegram. <a href="../thanks/">What happens next</a>.'; }
+      clearTimeout(timer); btn.disabled = false; btn.textContent = 'Send the brief';
+      let box = form.querySelector('.fallback');
+      if (!box) { box = document.createElement('div'); box.className = 'fallback field'; box.innerHTML = '<label>Could not send from here. Copy the brief and send it to <a href="mailto:chopsiiev@gmail.com">chopsiiev@gmail.com</a> or on <a href="https://t.me/Hadzhymurad">Telegram</a>.</label><textarea rows="6" readonly></textarea><div class="actions"><button class="btn alt" type="button">Copy the brief</button></div>'; form.insertBefore(box, next);
+        box.querySelector('button').addEventListener('click', async (ev) => { try { await navigator.clipboard.writeText(box.querySelector('textarea').value); ev.target.textContent = 'Copied'; } catch (y) { box.querySelector('textarea').select(); } }); }
+      box.querySelector('textarea').value = text; next.textContent = ''; }
   });
   // end
 </script>

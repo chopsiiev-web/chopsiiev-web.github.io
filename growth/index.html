@@ -200,15 +200,18 @@
     err.textContent = '';
     const text = ['Email: ' + d.email, 'Product: ' + d.product, 'Market to enter: ' + d.market, 'Where they are now: ' + (d.now || '-')].join('\n');
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
+    const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 8000);
     try {
-      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Growth brief\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text }) });
+      const r = await fetch('https://api.telegram.org/bot' + TG.token + '/sendMessage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TG.chat, text: 'Growth brief\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text }), signal: ctl.signal });
+      clearTimeout(timer);
       if (!r.ok) throw new Error(String(r.status));
       btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; if (!location.pathname.includes('/thanks')) location.href = '../thanks/'; return;
     } catch (x) {
-      btn.disabled = false; btn.textContent = 'Send the brief';
-      try { await navigator.clipboard.writeText(text); } catch (y) {}
-      location.href = 'mailto:chopsiiev@gmail.com?subject=' + encodeURIComponent('Growth brief: ' + d.product) + '&body=' + encodeURIComponent(text);
-      next.innerHTML = 'Sending from the page failed, so your email app opened with the brief inside. The brief is also copied, in case you prefer Telegram. <a href="../thanks/">What happens next</a>.'; }
+      clearTimeout(timer); btn.disabled = false; btn.textContent = 'Send the brief';
+      let box = form.querySelector('.fallback');
+      if (!box) { box = document.createElement('div'); box.className = 'fallback field'; box.innerHTML = '<label>Could not send from here. Copy the brief and send it to <a href="mailto:chopsiiev@gmail.com">chopsiiev@gmail.com</a> or on <a href="https://t.me/Hadzhymurad">Telegram</a>.</label><textarea rows="6" readonly></textarea><div class="actions"><button class="btn alt" type="button">Copy the brief</button></div>'; form.insertBefore(box, next);
+        box.querySelector('button').addEventListener('click', async (ev) => { try { await navigator.clipboard.writeText(box.querySelector('textarea').value); ev.target.textContent = 'Copied'; } catch (y) { box.querySelector('textarea').select(); } }); }
+      box.querySelector('textarea').value = text; next.textContent = ''; }
   });
   // end
 </script>

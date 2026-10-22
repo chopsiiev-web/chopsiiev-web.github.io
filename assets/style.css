@@ -379,3 +379,6 @@ footer { font: 400 .8rem/1.5 var(--mono); color: var(--muted); }
 .row.contact a { color: var(--ink); text-decoration-color: var(--signal); text-underline-offset: 4px; }
 
 .pains.four { grid-template-columns: repeat(auto-fit, minmax(min(100%, 27rem), 1fr)); }
+.hint { display: block; margin-top: .3rem; color: var(--muted); font-size: .85rem; }
+.hero .cta-top { text-decoration: none; display: inline-block; }
+.fallback textarea { width: 100%; font: 400 .9rem/1.5 var(--mono); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); padding: .7rem .8rem; }
