@@ -34,7 +34,7 @@
   <section class="hero" aria-labelledby="promise">
     <h1 id="promise">Hi. I make films for software products.</h1>
     <p>Two kinds. A product film that goes out the day your feature ships. An animated explainer that makes a hard idea obvious in a minute. Both built on your real product, in days.</p>
-    <p><a class="btn cta-top" href="#order">Start a film</a></p>
+    <p><a class="btn cta-top" href="#brief">Start a film</a></p>
     <div class="wall v">
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="../media/jambuild.jpg" src="../media/jambuild.mp4" aria-label="jambuild product film, muted preview"></video><span class="cap">jambuild · product film · 20 s</span></div>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="../media/testerarmy.jpg" src="../media/testerarmy.mp4" aria-label="TesterArmy product film, muted preview"></video><span class="cap">TesterArmy · 23 s</span></div>
@@ -387,8 +387,8 @@
           <li><b>One round of changes</b><span>Wording, a swapped screen, colours, logo, music, the end card, length by up to 5 seconds. A new angle, script or product is a new order.</span></li>
           <li><b>You own the file</b><span>16:9 or 9:16, with the footage I captured.</span></li>
         </ul>
-        <a class="btn pay" href="https://buy.stripe.com/eVqcN67Lg7oPddObYU48000" target="_blank" rel="noopener">Pay EUR 499 and start</a>
-        <span class="eyebrow">secure payment by Stripe · then send the brief below</span>
+        <a class="btn pay" href="#brief" data-kind="Product film">Order a product film</a>
+        <span class="eyebrow">the brief first, then payment by Stripe, then two working days</span>
       </article>
       <article class="path2">
         <span class="k">Animated explainer</span>
@@ -400,10 +400,12 @@
           <li><b>About a week</b><span>From your yes on the script to the film, for most explainers.</span></li>
           <li><b>Some topics I decline</b><span>Claims I cannot verify from your sources, and regulated advice.</span></li>
         </ul>
+        <a class="btn pay alt" href="#brief" data-kind="Animated explainer">Ask about an explainer</a>
+        <span class="eyebrow">the brief first, then a call with the price and the dates</span>
       </article>
     </div>
     <form class="form" id="brief" novalidate>
-      <div class="field"><span class="eyebrow">Send the brief</span></div>
+      <div class="field"><span class="eyebrow">Your brief</span><p class="hint" id="kind-note">Product film: send the brief, pay EUR 499 on the next screen, and the two working days start. Explainer: send the brief and I call you with the price and the dates.</p></div>
       <div class="field"><label>Which film</label>
         <div class="seg"><label><input type="radio" name="kind" value="Product film" checked> Product film</label><label><input type="radio" name="kind" value="Animated explainer"> Explainer</label><label><input type="radio" name="kind" value="Not sure yet"> Not sure yet</label></div></div>
       <div class="field"><label for="f-email">Your email</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required placeholder="you@company.com"></div>
@@ -414,13 +416,13 @@
       <div class="field"><label for="f-sources">For an explainer: sources or a draft script <em>optional</em></label><input id="f-sources" name="sources" type="text" autocomplete="off" spellcheck="false" placeholder="docs, a page, a draft, links"></div>
       <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
       <p class="err" id="f-err" aria-live="polite"></p>
-      <div class="actions"><button class="btn" type="submit">Send the brief</button><span class="eyebrow">goes to my Telegram at once · pay above or later</span></div>
-      <p class="next" id="f-next" aria-live="polite">Product film: pay above or after the brief, your choice; the two working days start when the payment and the link are both in. Explainer: a call, then the price and the dates.</p>
+      <div class="actions"><button class="btn" type="submit" id="f-submit">Continue to payment · EUR 499</button><span class="eyebrow">the brief reaches me at once</span></div>
+      <p class="next" id="f-next" aria-live="polite">Payment is on Stripe, with your order number attached, so I can match it to the brief.</p>
     </form>
     <p class="row contact"><a href="mailto:chopsiiev@gmail.com">chopsiiev@gmail.com</a><a href="https://t.me/Hadzhymurad">Telegram</a><a href="https://www.linkedin.com/in/hadzhymurad/">LinkedIn</a><a href="https://x.com/chopsiiev60091">X</a><a href="../cv/Hadzhymurad-Chopsiiev-CV.pdf">CV</a></p>
   </section>
   <footer>Lisbon. Remote across Europe. Product films here are unofficial spec pieces; the brands did not commission them.</footer>
-  <a class="sticky" id="sticky" href="#order">Start a film →</a>
+  <a class="sticky" id="sticky" href="#brief">Start a film →</a>
 </main>
 <script>
   // work grid: hover = muted preview (pointer devices only), click = sound. One player at a time.
@@ -446,13 +448,17 @@
     if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Add the link to the product.'); bad.focus(); return; }
     err.textContent = '';
     const text = ['Film: ' + (d.kind || 'not sure yet'), 'Email: ' + d.email, 'Product: ' + d.product, 'Launch date: ' + (d.launch_date || '-'), 'Main thing to say: ' + (d.message || '-'), 'References: ' + (d.references || '-'), 'Sources or draft script: ' + (d.sources || '-')].join('\n');
+    const ref = 'B-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
     const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 8000);
     try {
-      const r = await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Film brief\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text, website: (form.website && form.website.value) || '' }), signal: ctl.signal });
+      const r = await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Film brief · ' + ref + '\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text, website: (form.website && form.website.value) || '' }), signal: ctl.signal });
       clearTimeout(timer);
       if (!r.ok) throw new Error(String(r.status));
-      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; if (!location.pathname.includes('/thanks')) location.href = '../thanks/'; return;
+      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.';
+      try { localStorage.setItem('brief', JSON.stringify({ ref, kind: d.kind || '', email: d.email, t: Date.now() })); } catch (y) {}
+      if (d.kind === 'Product film') {{ location.href = 'https://buy.stripe.com/eVqcN67Lg7oPddObYU48000?client_reference_id=' + ref + '&prefilled_email=' + encodeURIComponent(d.email); }} else {{ location.href = '../thanks/'; }}
+      return;
     } catch (x) {
       clearTimeout(timer); btn.disabled = false; btn.textContent = 'Send the brief';
       let box = form.querySelector('.fallback');
@@ -460,6 +466,11 @@
         box.querySelector('button').addEventListener('click', async (ev) => { try { await navigator.clipboard.writeText(box.querySelector('textarea').value); ev.target.textContent = 'Copied'; } catch (y) { box.querySelector('textarea').select(); } }); }
       box.querySelector('textarea').value = text; next.textContent = ''; }
   });
+  // one path: the kind decides the button and what happens after the brief
+  const kindNote = { 'Product film': 'Continue to payment · EUR 499', 'Animated explainer': 'Send the brief', 'Not sure yet': 'Send the brief' };
+  const syncKind = () => { const k = (form.querySelector('input[name=kind]:checked') || {}).value || 'Product film'; document.getElementById('f-submit').textContent = kindNote[k]; };
+  form.querySelectorAll('input[name=kind]').forEach(r => r.addEventListener('change', syncKind)); syncKind();
+  document.querySelectorAll('a.btn.pay[data-kind]').forEach(a => a.addEventListener('click', () => { const r = form.querySelector('input[name=kind][value="' + a.dataset.kind + '"]'); if (r) { r.checked = true; syncKind(); } }));
   // sticky button: shown while neither the hero nor the order block is on screen
   const sticky = document.getElementById('sticky'); const seen = new Map();
   const io = new IntersectionObserver(es => { es.forEach(x => seen.set(x.target, x.isIntersecting)); sticky.classList.toggle('show', ![...seen.values()].some(Boolean)); }, { threshold: 0.05 });

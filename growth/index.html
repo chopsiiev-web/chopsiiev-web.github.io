@@ -211,13 +211,17 @@
     if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Add the link to the product.'); bad.focus(); return; }
     err.textContent = '';
     const text = ['Email: ' + d.email, 'Product: ' + d.product, 'Market to enter: ' + d.market, 'Where they are now: ' + (d.now || '-')].join('\n');
+    const ref = 'B-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
     const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 8000);
     try {
-      const r = await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Growth brief\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text, website: (form.website && form.website.value) || '' }), signal: ctl.signal });
+      const r = await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Growth brief · ' + ref + '\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text, website: (form.website && form.website.value) || '' }), signal: ctl.signal });
       clearTimeout(timer);
       if (!r.ok) throw new Error(String(r.status));
-      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; if (!location.pathname.includes('/thanks')) location.href = '../thanks/'; return;
+      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.';
+      try { localStorage.setItem('brief', JSON.stringify({ ref, kind: d.kind || '', email: d.email, t: Date.now() })); } catch (y) {}
+      location.href = '../thanks/';
+      return;
     } catch (x) {
       clearTimeout(timer); btn.disabled = false; btn.textContent = 'Send the brief';
       let box = form.querySelector('.fallback');

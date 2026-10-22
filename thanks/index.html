@@ -31,7 +31,8 @@
   </header>
   <section class="hero" aria-labelledby="h">
     <h1 id="h">Thank you.</h1>
-    <p>Here is what happens next.</p>
+    <p id="sub">Here is what happens next.</p>
+    <p class="eyebrow" id="ref" hidden></p>
   </section>
   <section class="step" aria-labelledby="next">
     <span class="eyebrow">Next</span>
@@ -41,9 +42,8 @@
       <div class="stage gate" role="listitem"><span class="num">2</span><span class="fn">Send what is missing</span><span class="what">If you paid before sending the brief: the link to your product and the main thing to say, by email or on Telegram.</span></div>
       <div class="stage human" role="listitem"><span class="num">3</span><span class="fn">The clock starts</span><span class="what">Product film: two working days from the moment the payment and the link are both in. Explainer: dates agreed on the call.</span></div>
     </div>
-    <p class="row"><a class="btn pay" href="https://buy.stripe.com/eVqcN67Lg7oPddObYU48000" target="_blank" rel="noopener">Pay EUR 499 for a product film</a> <span class="eyebrow">only if you have not paid yet</span></p>
     <form class="form" id="brief" novalidate>
-      <div class="field"><span class="eyebrow">Paid already, or want to add something? Send it here</span></div>
+      <div class="field"><span class="eyebrow">Want to add something to your brief? Send it here</span></div>
       <div class="field"><label for="f-email">Your email</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required placeholder="you@company.com"></div>
       <div class="field"><label for="f-product">Link to the product</label><input id="f-product" name="product" type="url" inputmode="url" autocomplete="url" spellcheck="false" required placeholder="https://"></div>
       <div class="field"><label for="f-message">The main thing to say, references, dates <em>optional</em></label><textarea id="f-message" name="message" rows="3" autocomplete="off" placeholder="a few lines, or leave it to me"></textarea></div>
@@ -66,13 +66,17 @@
     if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Add the link to the product.'); bad.focus(); return; }
     err.textContent = '';
     const text = ['Email: ' + d.email, 'Product: ' + d.product, 'Notes: ' + (d.message || '-')].join('\n');
+    const ref = 'B-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
     const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 8000);
     try {
-      const r = await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Brief after payment\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text, website: (form.website && form.website.value) || '' }), signal: ctl.signal });
+      const r = await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Brief after payment · ' + ref + '\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text, website: (form.website && form.website.value) || '' }), signal: ctl.signal });
       clearTimeout(timer);
       if (!r.ok) throw new Error(String(r.status));
-      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; if (!location.pathname.includes('/thanks')) location.href = '../thanks/'; return;
+      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.';
+      try { localStorage.setItem('brief', JSON.stringify({ ref, kind: d.kind || '', email: d.email, t: Date.now() })); } catch (y) {}
+      
+      return;
     } catch (x) {
       clearTimeout(timer); btn.disabled = false; btn.textContent = 'Send the brief';
       let box = form.querySelector('.fallback');
@@ -80,6 +84,28 @@
         box.querySelector('button').addEventListener('click', async (ev) => { try { await navigator.clipboard.writeText(box.querySelector('textarea').value); ev.target.textContent = 'Copied'; } catch (y) { box.querySelector('textarea').select(); } }); }
       box.querySelector('textarea').value = text; next.textContent = ''; }
   });
+  // after Stripe (?paid=1): show the order as received and paid; report it once
+  (async () => {
+    const paid = new URLSearchParams(location.search).get('paid') === '1';
+    let brief = null; try { brief = JSON.parse(localStorage.getItem('brief') || 'null'); } catch (x) {}
+    const ref = document.getElementById('ref');
+    if (brief && brief.ref) { ref.textContent = 'Order ' + brief.ref + (brief.kind ? ' · ' + brief.kind : ''); ref.hidden = false; }
+    if (!paid) return;
+    document.getElementById('h').textContent = 'Thank you. The clock is running.';
+    document.getElementById('sub').textContent = 'Your brief is in and the payment is done. Here is what happens next.';
+    const st = document.querySelectorAll('.stage');
+    const set = (el, fn, what, cls) => { el.querySelector('.fn').textContent = fn; el.querySelector('.what').textContent = what; el.className = 'stage' + (cls ? ' ' + cls : ''); };
+    set(st[0], 'Your brief is in', (brief && brief.ref ? 'Order ' + brief.ref + '. ' : '') + 'I read it today and reply with any question I have.', '');
+    set(st[1], 'Payment received', 'Stripe emails you the receipt. The same order number sits on the payment, so nothing gets mixed up.', 'gate');
+    set(st[2], 'Two working days from now', 'I send the film. Then one round of changes, as defined on the page.', 'human');
+    form.hidden = true; document.querySelector('.lead').textContent = 'Something to add in the meantime: write any time.';
+    try {
+      if (brief && brief.ref && !localStorage.getItem('paid-' + brief.ref)) {
+        localStorage.setItem('paid-' + brief.ref, '1');
+        await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Payment reported · ' + brief.ref + '\nThe customer came back from Stripe. Check the payment with this reference in the Stripe dashboard.\nEmail: ' + (brief.email || '-'), website: '' }) });
+      }
+    } catch (x) {}
+  })();
   // end
 </script>
 </body>

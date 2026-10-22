@@ -509,13 +509,17 @@
     if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Describe the work done by hand.'); bad.focus(); return; }
     err.textContent = '';
     const text = ['Email: ' + d.email, 'Company: ' + (d.company || '-'), 'Work done by hand: ' + d.task, 'Should happen instead: ' + (d.instead || '-')].join('\n');
+    const ref = 'B-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
     const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Sending…';
     const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 8000);
     try {
-      const r = await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Automation brief\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text, website: (form.website && form.website.value) || '' }), signal: ctl.signal });
+      const r = await fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Automation brief · ' + ref + '\nSource: ' + SRC + ' · ' + location.href + '\n\n' + text, website: (form.website && form.website.value) || '' }), signal: ctl.signal });
       clearTimeout(timer);
       if (!r.ok) throw new Error(String(r.status));
-      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.'; if (!location.pathname.includes('/thanks')) location.href = '../thanks/'; return;
+      btn.textContent = 'Sent'; next.textContent = 'Sent. I reply within a day.';
+      try { localStorage.setItem('brief', JSON.stringify({ ref, kind: d.kind || '', email: d.email, t: Date.now() })); } catch (y) {}
+      location.href = '../thanks/';
+      return;
     } catch (x) {
       clearTimeout(timer); btn.disabled = false; btn.textContent = 'Send the brief';
       let box = form.querySelector('.fallback');
@@ -523,9 +527,6 @@
         box.querySelector('button').addEventListener('click', async (ev) => { try { await navigator.clipboard.writeText(box.querySelector('textarea').value); ev.target.textContent = 'Copied'; } catch (y) { box.querySelector('textarea').select(); } }); }
       box.querySelector('textarea').value = text; next.textContent = ''; }
   });
-  const sticky = document.getElementById('sticky'); const seen = new Map();
-  const io = new IntersectionObserver(es => { es.forEach(x => seen.set(x.target, x.isIntersecting)); sticky.classList.toggle('show', ![...seen.values()].some(Boolean)); }, { threshold: 0.05 });
-  io.observe(document.querySelector('.hero')); io.observe(document.getElementById('order'));
   document.querySelectorAll('.board, .loop').forEach(b => b.addEventListener('click', () => { b.classList.toggle('zoom'); if (!b.classList.contains('zoom')) b.scrollLeft = 0; }));
 </script>
 </body>
