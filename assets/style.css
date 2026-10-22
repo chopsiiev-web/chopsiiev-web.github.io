@@ -386,7 +386,7 @@ footer { font: 400 .8rem/1.5 var(--mono); color: var(--muted); }
 .me.seven .rules { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
 
 /* ===== phone UX pass (2026-10-22) ===== */
-.wall.v { grid-template-columns: 2.1fr 1fr .63fr; }
+@media (min-width: 701px) { .wall.v { grid-template-columns: 2.1fr 1fr .63fr; } }
 .grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 13.5rem), 1fr)); }
 .k, .worth b::before, .step > .eyebrow::before, .pains li::before, .prod .k, .path2 .k, .case2 .k, .use .n, .mini .k, .case-head .k, .casecard .k { color: #c23a0d; }
 .top .social a, .row.contact a { display: inline-block; padding: .5rem .35rem; margin: -.5rem -.35rem; }
