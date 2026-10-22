@@ -522,9 +522,6 @@
         box.querySelector('button').addEventListener('click', async (ev) => { try { await navigator.clipboard.writeText(box.querySelector('textarea').value); ev.target.textContent = 'Copied'; } catch (y) { box.querySelector('textarea').select(); } }); }
       box.querySelector('textarea').value = text; next.textContent = ''; }
   });
-  const sticky = document.getElementById('sticky'); const seen = new Map();
-  const io = new IntersectionObserver(es => { es.forEach(x => seen.set(x.target, x.isIntersecting)); sticky.classList.toggle('show', ![...seen.values()].some(Boolean)); }, { threshold: 0.05 });
-  io.observe(document.querySelector('.hero')); io.observe(document.getElementById('order'));
   document.querySelectorAll('.board, .loop').forEach(b => b.addEventListener('click', () => { b.classList.toggle('zoom'); if (!b.classList.contains('zoom')) b.scrollLeft = 0; }));
 </script>
 </body>
