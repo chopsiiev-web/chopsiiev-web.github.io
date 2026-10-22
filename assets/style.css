@@ -404,3 +404,5 @@ footer { font: 400 .8rem/1.5 var(--mono); color: var(--muted); }
   .flow { position: relative; }
   .flow::before { content: "swipe sideways to read →"; display: block; font: 500 .72rem/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
 }
+
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
