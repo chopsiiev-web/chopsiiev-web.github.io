@@ -376,48 +376,77 @@
   <section class="step order" aria-labelledby="ask" id="order" data-n="07">
     <span class="big" aria-hidden="true">07</span>
     <span class="eyebrow" data-n="07">Start a film</span>
-    <h2 class="h2" id="ask">Two ways to start.</h2>
-    <div class="paths">
-      <article class="path2">
-        <span class="k">Product film · single purchase</span>
-        <span class="big">EUR 499</span>
-        <ul>
-          <li><b>One film, 20 to 60 seconds</b><span>On your real product. No retainer.</span></li>
-          <li><b>Ready in two working days</b><span>Counted from the moment the payment and the link are both in.</span></li>
-          <li><b>One round of changes</b><span>Wording, a swapped screen, colours, logo, music, the end card, length by up to 5 seconds. A new angle, script or product is a new order.</span></li>
-          <li><b>You own the file</b><span>16:9 or 9:16, with the footage I captured.</span></li>
-        </ul>
-        <a class="btn pay" href="#brief" data-kind="Product film">Order a product film</a>
-        <span class="eyebrow">the brief first, then payment by Stripe, then two working days</span>
-      </article>
-      <article class="path2">
-        <span class="k">Animated explainer</span>
-        <span class="big">from EUR 199</span>
-        <ul>
-          <li><b>A 20-minute call first</b><span>The idea, the audience, the sources you have. The price depends on length and how much is drawn; you get it on the call.</span></li>
-          <li><b>Script before animation</b><span>Written in your voice. Nothing moves until you approve it.</span></li>
-          <li><b>Your voice or a hired one</b><span>Animated word by word, checked by tools, delivered with the files.</span></li>
-          <li><b>About a week</b><span>From your yes on the script to the film, for most explainers.</span></li>
-          <li><b>Some topics I decline</b><span>Claims I cannot verify from your sources, and regulated advice.</span></li>
-        </ul>
-        <a class="btn pay alt" href="#brief" data-kind="Animated explainer">Ask about an explainer</a>
-        <span class="eyebrow">the brief first, then a call with the price and the dates</span>
-      </article>
-    </div>
-    <form class="form" id="brief" novalidate>
-      <div class="field"><span class="eyebrow">Your brief</span><p class="hint" id="kind-note">Product film: send the brief, pay EUR 499 on the next screen, and the two working days start. Explainer: send the brief and I call you with the price and the dates.</p></div>
-      <div class="field"><label>Which film</label>
-        <div class="seg"><label><input type="radio" name="kind" value="Product film" checked> Product film</label><label><input type="radio" name="kind" value="Animated explainer"> Explainer</label><label><input type="radio" name="kind" value="Not sure yet"> Not sure yet</label></div></div>
-      <div class="field half"><label for="f-email">Your email</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required placeholder="you@company.com"></div>
-      <div class="field half"><label for="f-product">Link to the product</label><input id="f-product" name="product" type="url" inputmode="url" autocomplete="url" spellcheck="false" required placeholder="https://"><small class="hint">Behind a login? A demo account or a screen recording works.</small></div>
-      <div class="field half"><label for="f-date">Launch date or deadline <em>optional</em></label><input id="f-date" name="launch_date" type="date" autocomplete="off"></div>
-      <div class="field half"><label for="f-refs">References <em>optional</em></label><input id="f-refs" name="references" type="text" autocomplete="off" spellcheck="false" placeholder="films or ads you like, links"></div>
-      <div class="field"><label for="f-message">The main thing to say <em>optional</em></label><textarea id="f-message" name="message" rows="3" autocomplete="off" placeholder="one or two lines, or leave it to me"></textarea></div>
-      <div class="field"><label for="f-sources">For an explainer: sources or a draft script <em>optional</em></label><input id="f-sources" name="sources" type="text" autocomplete="off" spellcheck="false" placeholder="docs, a page, a draft, links"></div>
-      <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-      <p class="err" id="f-err" aria-live="polite"></p>
-      <div class="actions"><button class="btn" type="submit" id="f-submit">Continue to payment · EUR 499</button><span class="eyebrow">the brief reaches me at once</span></div>
-      <p class="next" id="f-next" aria-live="polite">Payment is on Stripe, with your order number attached, so I can match it to the brief.</p>
+    <h2 class="h2" id="ask">Pick a film. Send the brief.</h2>
+    <p class="lead">About two minutes. You see the price and what is included before you pay anything.</p>
+    <form class="form checkout" id="brief" novalidate>
+      <fieldset class="pick" aria-labelledby="pick-l">
+        <div class="stepk" id="pick-l"><b>1</b> Which film</div>
+        <div class="opts">
+        <label class="opt"><input type="radio" name="kind" value="Product film" checked><span class="k">Product film</span><span class="price">EUR 499</span><span class="sub">One film on your real product. Ready in two working days.</span></label>
+        <label class="opt"><input type="radio" name="kind" value="Animated explainer"><span class="k">Animated explainer</span><span class="price">from EUR 199</span><span class="sub">Drawn from your sources. About a week after the script.</span></label>
+        <label class="opt lite"><input type="radio" name="kind" value="Not sure yet"><span class="k">Not sure yet</span><span class="sub">Send the brief. I suggest the format and the price.</span></label>
+        </div>
+      </fieldset>
+      <aside class="sum" aria-label="What you get and what happens next">
+        <div class="sumv" data-for="Product film">
+          <div><span class="k">Product film</span><span class="price">EUR 499</span><span class="sub">Paid once, after the brief. No retainer.</span></div>
+          <div class="two">
+            <div><h4>Included</h4><ul>
+              <li>One film, 20 to 60 seconds, on your real product.</li>
+              <li>One round of changes: wording, a swapped screen, colours, logo, music, the end card, length by up to 5 seconds.</li>
+              <li>The file is yours, 16:9 or 9:16, with the footage I captured.</li>
+            </ul></div>
+            <div><h4>What happens next</h4><ol class="steps3">
+              <li><b>Brief</b><span>this form</span></li>
+              <li><b>Payment</b><span>EUR 499 on Stripe, your order number attached</span></li>
+              <li><b>Your film</b><span>two working days after the payment and the link are both in</span></li>
+            </ol></div>
+          </div>
+          <p class="fine">A new angle, script or product is a new order.</p>
+        </div>
+        <div class="sumv" data-for="Animated explainer" hidden>
+          <div><span class="k">Animated explainer</span><span class="price">from EUR 199</span><span class="sub">The price depends on length and how much is drawn. You get it on the call.</span></div>
+          <div class="two">
+            <div><h4>Included</h4><ul>
+              <li>A script in your voice. Nothing moves until you approve it.</li>
+              <li>Your voice or a hired one, animated word by word.</li>
+              <li>The film and the files, checked by tools before they reach you.</li>
+            </ul></div>
+            <div><h4>What happens next</h4><ol class="steps3">
+              <li><b>Brief</b><span>this form</span></li>
+              <li><b>A 20-minute call</b><span>the idea, the audience, your sources, then the price and the dates</span></li>
+              <li><b>Script, then the film</b><span>about a week after your yes on the script</span></li>
+            </ol></div>
+          </div>
+          <p class="fine">I decline claims I cannot verify from your sources, and regulated advice.</p>
+        </div>
+        <div class="sumv" data-for="Not sure yet" hidden>
+          <div><span class="k">Not sure yet</span><span class="price small">Price in my reply</span><span class="sub">Send the brief with the product link. I come back with the format that fits, the price and the dates.</span></div>
+          <div class="two">
+            <div><h4>What happens next</h4><ol class="steps3">
+              <li><b>Brief</b><span>this form</span></li>
+              <li><b>My reply</b><span>within a day: the format, the price, the dates</span></li>
+              <li><b>You decide</b><span>a product film is paid on Stripe, an explainer starts with a call</span></li>
+            </ol></div>
+          </div>
+          <p class="fine">Nothing to pay now.</p>
+        </div>
+      </aside>
+      <div class="fields">
+        <span class="stepk"><b>2</b> Your brief</span>
+        <div class="field half"><label for="f-email">Your email</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required placeholder="you@company.com"></div>
+        <div class="field half"><label for="f-product">Link to the product</label><input id="f-product" name="product" type="url" inputmode="url" autocomplete="url" spellcheck="false" required placeholder="https://your-product.com"><small class="hint">Behind a login? A demo account or a screen recording works.</small></div>
+        <div class="field"><label for="f-message">The main thing to say <em>optional</em></label><textarea id="f-message" name="message" rows="3" autocomplete="off" placeholder="one or two lines, or leave it to me"></textarea></div>
+        <div class="field half"><label for="f-date">Launch date or deadline <em>optional</em></label><input id="f-date" name="launch_date" type="date" autocomplete="off"></div>
+        <div class="field half"><label for="f-refs">References <em>optional</em></label><input id="f-refs" name="references" type="text" autocomplete="off" spellcheck="false" placeholder="films or ads you like, links"></div>
+        <div class="field" data-for="Animated explainer|Not sure yet" hidden><label for="f-sources">Sources or a draft script <em>optional</em></label><input id="f-sources" name="sources" type="text" autocomplete="off" spellcheck="false" placeholder="docs, a page, a draft, links"></div>
+        <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      </div>
+      <div class="send">
+        <p class="err" id="f-err" aria-live="polite"></p>
+        <div class="actions"><button class="btn" type="submit" id="f-submit">Continue to payment · EUR 499</button></div>
+        <p class="next" id="f-next" aria-live="polite">Next: the brief reaches me at once, then Stripe checkout for EUR 499 with your order number attached.</p>
+      </div>
     </form>
     <p class="row contact"><a href="mailto:chopsiiev@gmail.com">chopsiiev@gmail.com</a><a href="https://t.me/Hadzhymurad">Telegram</a><a href="https://www.linkedin.com/in/hadzhymurad/">LinkedIn</a><a href="https://x.com/chopsiiev60091">X</a><a href="../cv/Hadzhymurad-Chopsiiev-CV.pdf">CV</a></p>
   </section>
@@ -445,7 +474,7 @@
   form.addEventListener('submit', async e => { e.preventDefault();
     const d = Object.fromEntries(new FormData(form).entries());
     const bad = [...form.querySelectorAll('[required]')].find(i => !i.checkValidity());
-    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Add the link to the product.'); bad.focus(); return; }
+    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Add the link to the product.'); bad.setAttribute('aria-invalid', 'true'); (bad.closest('.field') || form).append(err); bad.focus(); return; }
     err.textContent = '';
     const text = ['Film: ' + (d.kind || 'not sure yet'), 'Email: ' + d.email, 'Product: ' + d.product, 'Launch date: ' + (d.launch_date || '-'), 'Main thing to say: ' + (d.message || '-'), 'References: ' + (d.references || '-'), 'Sources or draft script: ' + (d.sources || '-')].join('\n');
     const ref = 'B-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
@@ -466,11 +495,14 @@
         box.querySelector('button').addEventListener('click', async (ev) => { try { await navigator.clipboard.writeText(box.querySelector('textarea').value); ev.target.textContent = 'Copied'; } catch (y) { box.querySelector('textarea').select(); } }); }
       box.querySelector('textarea').value = text; next.textContent = ''; }
   });
-  // one path: the kind decides the button and what happens after the brief
-  const kindNote = { 'Product film': 'Continue to payment · EUR 499', 'Animated explainer': 'Send the brief', 'Not sure yet': 'Send the brief' };
-  const syncKind = () => { const k = (form.querySelector('input[name=kind]:checked') || {}).value || 'Product film'; document.getElementById('f-submit').textContent = kindNote[k]; };
-  form.querySelectorAll('input[name=kind]').forEach(r => r.addEventListener('change', syncKind)); syncKind();
-  document.querySelectorAll('a.btn.pay[data-kind]').forEach(a => a.addEventListener('click', () => { const r = form.querySelector('input[name=kind][value="' + a.dataset.kind + '"]'); if (r) { r.checked = true; syncKind(); } }));
+  form.addEventListener('input', e => { e.target.removeAttribute('aria-invalid'); });
+  // one path: the kind decides which fields show, the summary beside the form, the button and what happens after the brief
+  const labels = { 'Product film': 'Continue to payment · EUR 499', 'Animated explainer': 'Send the brief', 'Not sure yet': 'Send the brief' };
+  const notes = { 'Product film': 'Next: the brief reaches me at once, then Stripe checkout for EUR 499 with your order number attached.', 'Animated explainer': 'Next: the brief reaches me at once. I call you with the price and the dates. Nothing to pay now.', 'Not sure yet': 'Next: the brief reaches me at once. I reply within a day. Nothing to pay now.' };
+  const syncKind = () => { const k = (form.querySelector('input[name=kind]:checked') || {}).value || 'Product film';
+    document.getElementById('f-submit').textContent = labels[k]; next.textContent = notes[k];
+    form.querySelectorAll('[data-for]').forEach(el => { el.hidden = !el.dataset.for.split('|').includes(k); }); };
+  form.querySelectorAll('input[name=kind]').forEach(r => r.addEventListener('change', syncKind)); syncKind(); addEventListener('pageshow', syncKind);
   // sticky button: shown while neither the hero nor the order block is on screen
   const sticky = document.getElementById('sticky'); const seen = new Map();
   const io = new IntersectionObserver(es => { es.forEach(x => seen.set(x.target, x.isIntersecting)); sticky.classList.toggle('show', ![...seen.values()].some(Boolean)); }, { threshold: 0.05 });

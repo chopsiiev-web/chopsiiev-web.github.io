@@ -63,7 +63,7 @@
   form.addEventListener('submit', async e => { e.preventDefault();
     const d = Object.fromEntries(new FormData(form).entries());
     const bad = [...form.querySelectorAll('[required]')].find(i => !i.checkValidity());
-    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Add the link to the product.'); bad.focus(); return; }
+    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Add the link to the product.'); bad.setAttribute('aria-invalid', 'true'); (bad.closest('.field') || form).append(err); bad.focus(); return; }
     err.textContent = '';
     const text = ['Email: ' + d.email, 'Product: ' + d.product, 'Notes: ' + (d.message || '-')].join('\n');
     const ref = 'B-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
@@ -84,6 +84,7 @@
         box.querySelector('button').addEventListener('click', async (ev) => { try { await navigator.clipboard.writeText(box.querySelector('textarea').value); ev.target.textContent = 'Copied'; } catch (y) { box.querySelector('textarea').select(); } }); }
       box.querySelector('textarea').value = text; next.textContent = ''; }
   });
+  form.addEventListener('input', e => { e.target.removeAttribute('aria-invalid'); });
   // after Stripe (?paid=1): show the order as received and paid; report it once
   (async () => {
     const paid = new URLSearchParams(location.search).get('paid') === '1';

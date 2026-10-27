@@ -506,7 +506,7 @@
   form.addEventListener('submit', async e => { e.preventDefault();
     const d = Object.fromEntries(new FormData(form).entries());
     const bad = [...form.querySelectorAll('[required]')].find(i => !i.checkValidity());
-    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Describe the work done by hand.'); bad.focus(); return; }
+    if (bad) { err.textContent = bad.type === 'email' ? 'Enter the email I should reply to.' : (bad.name === 'market' ? 'Say which market you want to enter.' : 'Describe the work done by hand.'); bad.setAttribute('aria-invalid', 'true'); (bad.closest('.field') || form).append(err); bad.focus(); return; }
     err.textContent = '';
     const text = ['Email: ' + d.email, 'Company: ' + (d.company || '-'), 'Work done by hand: ' + d.task, 'Should happen instead: ' + (d.instead || '-')].join('\n');
     const ref = 'B-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
@@ -527,6 +527,7 @@
         box.querySelector('button').addEventListener('click', async (ev) => { try { await navigator.clipboard.writeText(box.querySelector('textarea').value); ev.target.textContent = 'Copied'; } catch (y) { box.querySelector('textarea').select(); } }); }
       box.querySelector('textarea').value = text; next.textContent = ''; }
   });
+  form.addEventListener('input', e => { e.target.removeAttribute('aria-invalid'); });
   document.querySelectorAll('.board, .loop').forEach(b => b.addEventListener('click', () => { b.classList.toggle('zoom'); if (!b.classList.contains('zoom')) b.scrollLeft = 0; }));
 </script>
 <!-- Cloudflare Web Analytics: page views only, no cookies -->
